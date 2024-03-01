@@ -20,7 +20,12 @@ Route::get('/', function () {
     return view('front.index');
 });
 
-Route::get('/materi', [FrontController::class, 'indexMateri']);
+
+Route::prefix('materi')->group(function(){
+    Route::get('/', [FrontController::class, 'indexMateri']);
+    Route::get('/{materi_id}/konten', [FrontController::class, 'indexKontenMateri']);
+
+});
 
 Route::get('/dashboard', function () {
     return view('admin.dashboard');

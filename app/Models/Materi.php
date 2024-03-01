@@ -11,4 +11,8 @@ class Materi extends Model
     use HasFactory;
 
     protected $guarded = ['id'];
+
+    public function detail(){
+        return $this->hasMany(DetailMateri::class);
+    }
 }

@@ -15,8 +15,9 @@
                                 <div class="card-body">
                                     <p>{{ $item->deskripsi }}</p>
                                 </div>
-                                <div class="card-footer d-flex justify-content-end">
-                                    <a href="{{ url('materi/detail-soal/'.$item->id) }}" class="btn btn-sm btn-outline-primary">Kunjungi Materi</a>
+                                <div class="card-footer d-flex justify-content-between">
+                                    <a href="{{ url('materi/'.$item->id.'/konten') }}" class="btn btn-sm btn-outline-success">Coba Quiz</a>
+                                    <a href="{{ url('materi/'.$item->id.'/konten') }}" class="btn btn-sm btn-outline-info">Pelajari Materi</a>
                                 </div>
                             </div>
                         </div>
