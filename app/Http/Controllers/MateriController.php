@@ -100,7 +100,7 @@ class MateriController extends Controller
             $tujuan_upload = 'gambar_materi';
             $gambar->move($tujuan_upload, $nama_file);
 
-            $listGambar['image'] = $nama_file;
+            $listGambar[]['image'] = $nama_file;
         }
 
         // dd($listGambar);
@@ -160,5 +160,12 @@ class MateriController extends Controller
         $response = $this->materiServices->addJawaban($request->all());
 
         return back()->withSuccess($response['message']);
+    }
+
+
+    public function indexQuiz($materi_id){
+        return view('front.quiz', [
+            'materi_id' => $materi_id
+        ]);
     }
 }

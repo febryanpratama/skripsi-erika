@@ -21,6 +21,9 @@
         <link rel="stylesheet" href="{{ asset('') }}owlcarousel/owl.theme.default.min.css">
 
         <style>
+            .hide {
+                display: none;
+            }
             .ht-gradation.style-01 .item:hover .circle {
                 color: #ffffff;
                 background: #dc3545;
@@ -176,5 +179,6 @@
             });
         </script>
 
+        @yield('script')
     </body>
 </html>

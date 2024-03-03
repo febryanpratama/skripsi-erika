@@ -11,4 +11,8 @@ class SoalMateri extends Model
     use HasFactory, SoftDeletes;
 
     protected $guarded = ['id'];
+
+    public function jawaban(){
+        return $this->hasMany(JawabanMateri::class, 'soal_id', 'id');
+    }
 }

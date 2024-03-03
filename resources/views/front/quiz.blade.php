@@ -1,0 +1,194 @@
+@extends('layouts.front')
+
+@section('content')
+<div id="main-wrapper">
+    <div class="site-wrapper-reveal">
+        <div class="preview-hero-area preview-hero-bg position-relative section-space--ptb_120" style="background: url('{{ asset('') }}landing/assets/images/hero/mitech-landing-main-slider-bg.png');">
+            <div class="container-fluid container-fluid--cp-150">
+                <div class="row align-items-center mx-auto">
+                    <div class="col-lg-12 col-md-12" style="z-index: 999">
+                        <div class="card">
+                            <div class="card-header text-center">
+                                {{-- {{ dd($data) }} --}}
+                                <h3 id="title">Quiz Id</h3>
+                            </div>
+                            <div class="card-body">
+                                <div class="row d-flex justify-content-center" >
+                                    <div class="col-md-6 owl-carousel d-flex justify-content-center" id="carousel">
+                                        {{-- @foreach ($data->detail as $item)
+                                            <img src="https://dfstudio-d420.kxcdn.com/wordpress/wp-content/uploads/2019/06/digital_camera_photo-980x653.jpg" alt="">
+                                        @endforeach --}}
+                                    </div>
+                                </div>
+                                <div class="row mt-2 d-flex justify-content-center" id="jawaban">
+                                    <div class="col-md-8">
+                                        <h6 id="deskripsi">Rules. Anda Tidak dapat mengulangi pertanyaan sebelumnya. Jika anda melakukan hal tersebut, maka seluruh jawaban yang telah anda simpan akan direset dan memulai kembali dari awal. Beware !!!</h6>
+                                    </div>
+                                    {{-- <div class="col-md-8 col-xs-offset-1">
+                                        <div class="radio">
+                                            <label class="d-flex">
+                                                <input type="radio" name="rdo_pkdrop" style="margin-right: 20px" value="0" id="rdo_pick">
+                                                <h6>Ini Merupakan Jawaban 1</h6>
+                                            </label>
+                                        </div>
+                                        <div class="radio">
+                                            <label class="d-flex">
+                                                <input type="radio" name="rdo_pkdrop" style="margin-right: 20px" value="0" id="rdo_pick">
+                                                <h6>Ini Merupakan Jawaban 2</h6>
+                                            </label>
+                                        </div>
+                                        <div class="radio">
+                                            <label class="d-flex">
+                                                <input type="radio" name="rdo_pkdrop" style="margin-right: 20px" value="0" id="rdo_pick">
+                                                <h6>Ini Merupakan Jawaban 3</h6>
+                                            </label>
+                                        </div>
+                                        <div class="radio">
+                                            <label class="d-flex">
+                                                <input type="radio" name="rdo_pkdrop" style="margin-right: 20px" value="0" id="rdo_pick">
+                                                <h6>Ini Merupakan Jawaban 4</h6>
+                                            </label>
+                                        </div> --}}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-footer d-flex justify-content-end">
+                                {{-- <a href="javascript:;" class="btn btn-sm btn-outline-success" id="back">Back</a> --}}
+                                <a href="javascript:;" class="btn btn-sm btn-outline-info" id="next">Next</a>
+                                {{-- <a href="{{ url('materi/quiz/'.$data->id) }}" class="hide btn btn-sm btn-outline-info" id="btnquiz">Mulai Quiz</a> --}}
+                            </div>
+                        </div>
+                        {{-- <div class="card">
+                            <div class="card-header">
+                                <h5>{{ @$item->nama_materi }}</h5>
+                            </div>
+                            <div class="card-body">
+                                <p>{{ @$item->deskripsi }}</p>
+                            </div>
+                            <div class="card-footer d-flex justify-content-between">
+                            </div>
+                        </div> --}}
+                    </div>
+
+                </div>
+
+                <img class="img-fluid pe-img-01 animation_images two wow fadeInDown" src="{{ asset('') }}landing/assets/images/hero/mitech-landing-main-slider-slide-01-image-01.webp" width="337" height="383" alt="" />
+                <img class="img-fluid pe-img-02 animation_images two wow fadeInDown hide-in-mobile" src="{{ asset('') }}landing/assets/images/hero/mitech-landing-main-slider-slide-01-image-02.webp" width="119" height="184" alt="" />
+                <img class="img-fluid pe-img-03 animation_images two wow fadeInDown" src="{{ asset('') }}landing/assets/images/hero/mitech-landing-main-slider-slide-01-image-03.webp" width="360" height="435" alt="" />
+                <img class="img-fluid pe-img-04 animation_images two wow fadeInDown" src="{{ asset('') }}landing/assets/images/hero/mitech-landing-main-slider-slide-01-image-05.webp" width="356" height="68" alt="" />
+            </div>
+        </div>
+
+    </div>
+</div>
+@endsection
+
+@section('script')
+    <script>
+        $(document).ready(function(){
+            let quiz = []
+
+            $.ajax({
+                url: '{{ url("api/get-quiz/$materi_id") }}',
+                method: 'GET',
+                dataType: 'json', // Change this to the appropriate data type
+                success: function(response) {
+                    // Handle the successful response here
+                    // console.log(response);
+                    let resp = response.data
+
+
+                    // console.log(resp)
+                    // Shuffle Random Logic
+                    resp.sort(()=>{
+                        const randomTrueOrFalse = Math.random() > 0.5;
+                        return randomTrueOrFalse ? 1:-1
+                    })
+
+                    console.log(resp[0])
+
+                    let indexData = 0
+
+                    $('#next').on('click', function(e){
+                        console.log(indexData)
+
+                        $('#title').html(resp[indexData].soal)
+                        
+                        $('#jawaban').html(`
+                        <div class="col-md-8 col-xs-offset-1">
+                            <div class="radio">
+                                <label class="d-flex">
+                                    <input type="radio" name="rdo_pkdrop" style="margin-right: 20px" value="0" id="rdo_pick">
+                                    <h6>`+resp[indexData].jawaban[0].jawaban+`</h6>
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label class="d-flex">
+                                    <input type="radio" name="rdo_pkdrop" style="margin-right: 20px" value="0" id="rdo_pick">
+                                    <h6>`+resp[indexData].jawaban[1].jawaban+`</h6>
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label class="d-flex">
+                                    <input type="radio" name="rdo_pkdrop" style="margin-right: 20px" value="0" id="rdo_pick">
+                                    <h6>`+resp[indexData].jawaban[2].jawaban+`</h6>
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label class="d-flex">
+                                    <input type="radio" name="rdo_pkdrop" style="margin-right: 20px" value="0" id="rdo_pick">
+                                    <h6>`+resp[indexData].jawaban[3].jawaban+`</h6>
+                                </label>
+                            </div>
+                        </div>
+                        `)
+                        indexData++
+                    })
+                },
+                error: function(xhr, status, error) {
+                    // Handle errors here
+                    console.error(xhr.responseText);
+                }
+            });
+
+            // let index = 0;
+
+            // console.log(quiz)
+
+            // $("#next").on('click', function(event){
+            //     event.preventDefault();
+
+            //     $('#carousel').html('')
+
+            //     $('#deskripsi').html(konten[0][index].isi_konten)
+                
+            //     let gambar = JSON.parse(konten[0][index].gambar)
+
+            //     let nextIndex = index+1
+
+            //     for(let i=0;i < gambar.length; i++){
+
+            //         // console.log(i+"index")
+            //         // console.log(gambar[0].image+"URLINDEX")
+
+            //         let url = '{{ asset('') }}gambar_materi/'+gambar[i].image
+
+            //         console.log(url)
+            //         $('#carousel').append(`
+            //             <img src="`+url+`" style="width: 40%" alt="">
+            //         `)
+            //     }
+
+            //     if(index >= konten[0].length-1){
+            //         // event.preventDefault();
+            //         $('#next').addClass('hide')
+            //         $('#btnquiz').removeClass('hide')
+                    
+            //     }
+
+            //     index++
+            // })
+
+        })
+    </script>
+@endsection

@@ -29,7 +29,7 @@ class MateriServices{
     }
 
     static function addDetailMateri($data, $listGambar){
-        // dd($data['gambar']);
+        // dd($listGambar);
 
         DetailMateri::create([
             'materi_id' => $data['materi_id'],
