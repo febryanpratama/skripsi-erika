@@ -40,6 +40,7 @@
         $(document).ready(function(){
             $('#mulai').on('click', function(){
                 // $('#navbar').removeClass('hide')
+                $('#navigation').css('display', '')
             })
         })
     </script>

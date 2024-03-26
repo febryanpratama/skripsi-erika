@@ -30,12 +30,14 @@ class MateriServices{
 
     static function addDetailMateri($data, $listGambar){
         // dd($listGambar);
+        // dd($data);
 
         DetailMateri::create([
             'materi_id' => $data['materi_id'],
             'nomor_section' => $data['nomor_section'],
             'isi_konten' => $data['isi_konten'],
-            'gambar' => json_encode($listGambar)
+            'gambar' => json_encode($listGambar),
+            'voice' => $data['name_voice']
         ]);
 
         return [

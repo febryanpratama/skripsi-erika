@@ -84,16 +84,25 @@ class MateriController extends Controller
             'materi_id' => 'required|numeric|exists:materis,id',
             'nomor_section' => 'required|numeric',
             'isi_konten' => 'required',
+            'voice' => 'required|mimes:mp3|max:10000',
             'gambar.*' => 'required|image|mimes:jpg,jpeg,png'
         ]);
 
         if($validator->fails()){
 
-            dd($validator->errors()->first());
+            // dd($validator->errors()->first());
             return back()->withErrors($validator->errors()->first());
         }
 
         $listGambar = [];
+
+        if($request->file('voice')){
+            $voice = $request->file('voice');
+            $nama_file = time()."_".str_replace(' ', '_', $voice->getClientOriginalName());
+            $tujuan_upload = 'voice_materi';
+            $voice->move($tujuan_upload, $nama_file);
+            $request['name_voice'] = $nama_file;
+        }
 
         foreach($request->gambar as $gambar){
             $nama_file = time() . "_" . $gambar->getClientOriginalName();

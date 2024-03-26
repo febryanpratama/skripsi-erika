@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <title>SIADAPresisi | Aplikasi Pengesahan Pokja Pemilihan Biro Pengadaan Barang dan Jasa Slog Polri</title>
+        <title>CAI | COMPUTER AISTED SYSTEM</title>
         <meta name="description" content="" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <!-- Favicon -->
@@ -25,6 +25,10 @@
         <style>
             .hide {
                 display: none;
+            }
+
+            audio {
+                width: 100%;
             }
             .ht-gradation.style-01 .item:hover .circle {
                 color: #ffffff;
@@ -61,7 +65,7 @@
                                 <!-- navigation menu -->
                                 <div class="header__navigation menu-style-four preview-menu d-none d-xl-block hide d-none" style="display: none" id="navbar">
                                     <nav class="navigation-menu navigation-menu--onepage navigation-menu-right hide">
-                                        <ul class="hide">
+                                        <ul class="hide" id="navigation" style="display: none">
                                             <li>
                                                 <a href="{{ url('materi') }}"><span>Materi</span></a>
                                             </li>
@@ -198,6 +202,7 @@
                 @endif ()
             });
         </script>
+
 
         @yield('script')
     </body>

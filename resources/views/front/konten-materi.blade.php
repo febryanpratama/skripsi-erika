@@ -22,6 +22,11 @@
                                 </div>
                                 <div class="row mt-2 d-flex justify-content-center">
                                     <div class="col-md-8">
+                                        <span class="audioo hide">
+                                            <audio controls>
+                                                <source src="" type="audio/mpeg">
+                                            </audio>
+                                        </span>
                                         <p id="deskripsi">
                                             Selamat datang di materi <b>{{ $data->nama_materi }}</b>. Materi ini akan membahas tentang <b>{{ $data->deskripsi }}</b>. Silahkan klik next untuk melanjutkan ke materi selanjutnya.
                                         </p>
@@ -90,10 +95,12 @@
 
             $("#next").on('click', function(event){
                 event.preventDefault();
+                $('.audioo').removeClass('hide')
 
                 $('#carousel').html('')
 
                 $('#deskripsi').html(konten[0][index].isi_konten)
+                $('audio').attr('src', '{{ asset('') }}voice_materi/'+konten[0][index].voice)
                 
                 let gambar = JSON.parse(konten[0][index].gambar)
 

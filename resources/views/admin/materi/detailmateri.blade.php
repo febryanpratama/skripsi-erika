@@ -17,9 +17,14 @@
                                 <input type="number" class="form-control" name="nomor_section">
                             </div>
                             <div class="form-group mb-3">
+                                <label for="" class="control-label mb-2">File Mp3</label>
+                                <input type="file" class="form-control" name="voice" required>
+                            </div>
+                            <div class="form-group mb-3">
                                 <label for="" class="control-label mb-2">Isi Konten</label>
                                 <textarea name="isi_konten" id="ckeditor" class="form-control ckeditor" cols="30" rows="10"></textarea>
                             </div>
+                            
                             <div class="form-group mb-3">
                                 <div class="d-flex justify-content-between mb-2">
                                     <label for="" class="control-label">Gambar</label>
