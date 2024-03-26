@@ -46,9 +46,9 @@
              </a>
           </li>
           <li class="nav-item ">
-             <a href="https://www.nobleui.com/laravel/template/demo1/apps/calendar" class="nav-link">
+             <a href="{{ url('admin/quiz') }}" class="nav-link">
              <i class="link-icon" data-feather="calendar"></i>
-             <span class="link-title">Master Data</span>
+             <span class="link-title">Quiz</span>
              </a>
           </li>
           <li class="nav-item nav-category">Profile</li>

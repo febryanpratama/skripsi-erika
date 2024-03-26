@@ -117,7 +117,7 @@
             // console.log(respArray)
 
             $.ajax({
-                url: '{{ url("api/get-quiz/$materi_id") }}',
+                url: '{{ url("api/get-quiz-nonmateri/$materi_id") }}',
                 method: 'GET',
                 dataType: 'json', // Change this to the appropriate data type
                 success: function(response) {

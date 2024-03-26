@@ -25,6 +25,7 @@ Route::prefix('materi')->group(function(){
     Route::get('/', [FrontController::class, 'indexMateri']);
     Route::get('/{materi_id}/konten', [FrontController::class, 'indexKontenMateri']);
     Route::get('/quiz/{materi_id}', [MateriController::class, 'indexQuiz']);
+    Route::get('/quiz/{materi_id}/nonmateri', [MateriController::class, 'indexQuizNonMateriFront']);
 
 
 });
@@ -60,6 +61,14 @@ Route::group([
 
 
         // Route::get('/quiz/{materi_id}', [MateriController::class, 'indexQuiz']);
+    });
+
+    Route::prefix('quiz')->group(function(){
+        Route::get('/', [MateriController::class, 'indexQuizList']);
+        Route::get('/{materi_id}', [MateriController::class, 'indexQuizNonMateri']);
+        Route::post('/{materi_id}', [MateriController::class, 'storeQuizNonMateri']);
+        Route::get('/{materi_id}/detail-jawaban/{soal_id}', [MateriController::class, 'getDetailJawaban']);
+        Route::post('/{materi_id}/detail-jawaban', [MateriController::class, 'postDetailJawaban']);
     });
 });
 

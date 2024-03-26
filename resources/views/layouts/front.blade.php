@@ -19,6 +19,8 @@
 
         <link rel="stylesheet" href="{{ asset('') }}owlcarousel/owl.carousel.min.css">
         <link rel="stylesheet" href="{{ asset('') }}owlcarousel/owl.theme.default.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.6/dist/sweetalert2.min.css">
+
 
         <style>
             .hide {
@@ -57,9 +59,9 @@
                                     </a>
                                 </div>
                                 <!-- navigation menu -->
-                                <div class="header__navigation menu-style-four preview-menu d-none d-xl-block">
-                                    <nav class="navigation-menu navigation-menu--onepage navigation-menu-right">
-                                        <ul>
+                                <div class="header__navigation menu-style-four preview-menu d-none d-xl-block hide d-none" style="display: none" id="navbar">
+                                    <nav class="navigation-menu navigation-menu--onepage navigation-menu-right hide">
+                                        <ul class="hide">
                                             <li>
                                                 <a href="{{ url('materi') }}"><span>Materi</span></a>
                                             </li>
@@ -119,7 +121,7 @@
                     </div>
                 </div>
                 <div class="mobile-menu-overlay__body">
-                    <nav class="offcanvas-navigation offcanvas-navigation--onepage">
+                    <nav class="offcanvas-navigation offcanvas-navigation--onepage" id="navbar">
                         <ul>
                             <li>
                                 <a href="{{ url('materi') }}"><span>Materi</span></a>
@@ -156,6 +158,12 @@
 
         <!-- Main JS -->
         <script src="{{ asset('') }}landing/assets/js/main.js"></script>
+        {{-- <script src="{{ asset('') }}admin/app-assets/vendors/js/extensions/sweetalert2.all.js" type="text/javascript"></script> --}}
+        {{-- <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.6/dist/sweetalert2.all.min.js"></script> --}}
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+
+
 
         <script src="{{ asset('') }}owlcarousel/owl.carousel.min.js"></script>
 
@@ -176,6 +184,18 @@
                 $('.stop').on('click',function(){
                     owl.trigger('stop.owl.autoplay')
                 })
+            });
+        </script>
+        <script>
+            $(document).ready(function(){
+                $('.dropify').dropify();
+    
+                @if (session('success'))
+                swal("Great !", "{{ session('success') }}", "success");
+                @endif ()
+                @if (session('error'))
+                swal("Oh No !", "{{ session('error') }}", "error");
+                @endif ()
             });
         </script>
 

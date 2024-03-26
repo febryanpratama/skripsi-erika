@@ -12,7 +12,7 @@
                             <h2 class="font-weight--reguler text-white mb-20"><span class="text-warning">CAI</span> - Aplikasi yang memanfaatkan komputer sebagai alat bantu belajar</h2>
                             {{-- <i class="text-white" style="font-size: 20px;">Mudah, Cepat dan Transparan</i> --}}
                             <div class="hero-button mt-30">
-                                <a href="#" class="btn btn--white">Mulai Aplikasi</a>
+                                <a href="#" class="btn btn--white" id="mulai">Mulai Aplikasi</a>
                             </div>
                         </div>
                     </div>
@@ -33,4 +33,14 @@
     </div>
 </div>
 
+@endsection
+
+@section('script')
+    <script>
+        $(document).ready(function(){
+            $('#mulai').on('click', function(){
+                // $('#navbar').removeClass('hide')
+            })
+        })
+    </script>
 @endsection

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\DetailMateri;
+use App\Models\JawabanMateri;
 use App\Models\Materi;
 use App\Models\SoalMateri;
 use Illuminate\Http\Request;
@@ -51,6 +52,46 @@ class FrontController extends Controller
             'status' => true,
             'message' => 'Success Get data',
             'data' => $data
+        ]);
+    }
+    
+    public function getQuizNonMateri($materi_id){
+        $data = SoalMateri::with('jawaban')->where('materi_id', $materi_id)->where('type', 'nonmateri')->get();
+
+        return response()->json([
+            'status' => true,
+            'message' => 'Success Get data',
+            'data' => $data
+        ]);
+    }
+
+    public function submitQuiz(Request $request){
+        // dd($request->all());
+
+        $data = $request->all();
+
+        // dd($data);
+
+        $count = count($data['quiz']);
+
+        $listcorrect = [];
+
+        for($i = 0; $i < $count; $i++){
+            // dd($data['quiz'][$i]);
+            $jawaban = JawabanMateri::where('soal_id', $data['quiz'][$i]['soal_id'])->where('id', $data['quiz'][$i]['jawaban_id'])->first();
+            if($jawaban->is_correct == 1){
+                $listcorrect[] = 1;
+            }
+        }
+
+        $total = count($listcorrect);
+
+        $score = ($total / $count) * 100;
+
+        return response()->json([
+            'status' => true,
+            'message' => 'Success Get data',
+            'score' => $score
         ]);
     }
 }

@@ -22,7 +22,9 @@
                                 </div>
                                 <div class="row mt-2 d-flex justify-content-center">
                                     <div class="col-md-8">
-                                        <h6 id="deskripsi"> .. ... ... ... ... ... .. </h6>
+                                        <p id="deskripsi">
+                                            Selamat datang di materi <b>{{ $data->nama_materi }}</b>. Materi ini akan membahas tentang <b>{{ $data->deskripsi }}</b>. Silahkan klik next untuk melanjutkan ke materi selanjutnya.
+                                        </p>
                                     </div>
                                 </div>
                             </div>

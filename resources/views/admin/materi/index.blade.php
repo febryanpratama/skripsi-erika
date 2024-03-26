@@ -5,14 +5,14 @@
             <div class="card">
                 <div class="position-relative">
                     <figure class="overflow-hidden mb-0 d-flex justify-content-center">
-                        <img src="{{ asset('') }}admin/assets/images/others/profile-cover.jpg" class="rounded-top" alt="profile cover" />
+                        <img src="{{ asset('') }}images/bg-materi.png" class="rounded-top" alt="profile cover" />
                     </figure>
                     <div class="d-flex justify-content-between align-items-center position-absolute top-90 w-100 px-2 px-md-4 mt-n4">
                         <div>
                             <img class="wd-70 rounded-circle" src="{{ asset('') }}admin/assets/images/faces/face1.jpg" alt="profile" />
                             <span class="h4 ms-3 text-dark">{{ Auth::user()->name }}</span>
                         </div>
-                        <div class="d-none d-md-block">
+                        {{-- <div class="d-none d-md-block">
                             <button class="btn btn-primary btn-icon-text">
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
@@ -31,11 +31,11 @@
                                 </svg>
                                 Edit profile
                             </button>
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
                 <div class="d-flex justify-content-center p-3 rounded-bottom">
-                    <h5>Computer Aided System</h5>
+                    <h2>Computer Aided System</h2>
                 </div>
             </div>
         </div>
@@ -148,16 +148,16 @@
                         <div class="card-header">
                             <div class="d-flex align-items-center justify-content-between">
                                 <div class="d-flex align-items-center">
-                                    <img class="img-xs rounded-circle" src="../assets/images/faces/face1.jpg" alt="" />
+                                    <img class="img-xs rounded-circle" src="{{ asset('') }}images/profile.jpg" alt="" />
                                     <div class="ms-2">
-                                        <p>Mike Popescu</p>
+                                        <p><b>{{ $item->nama_materi }}</b></p>
                                         <p class="tx-11 text-muted">5 min ago</p>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="card-body">
-                            <p class="mb-3 tx-14">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                            <p class="mb-3 tx-14">{{ $item->deskripsi }}.</p>
                             <img class="img-fluid" src="../assets/images/photos/img2.jpg" alt="" />
                         </div>
                         <div class="card-footer">

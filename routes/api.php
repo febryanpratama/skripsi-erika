@@ -21,3 +21,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::get('/detail-konten/{id}', [FrontController::class, 'getDetailKontenMateri']);
 Route::get('/get-quiz/{materi_id}', [FrontController::class, 'getQuiz']);
+Route::get('/get-quiz-nonmateri/{materi_id}', [FrontController::class, 'getQuizNonMateri']);
+Route::post('/quiz/submit', [FrontController::class, 'submitQuiz']);

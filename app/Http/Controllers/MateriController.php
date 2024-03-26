@@ -144,6 +144,40 @@ class MateriController extends Controller
 
     }
 
+    public function getDetailJawaban($materi_id,$soal_id){
+        $check = SoalMateri::where('id', $soal_id)->first();
+
+        if(!$check){
+            return back()->withErrors("Soal Tidak Ditemukan !!!");
+        }
+
+        $response = $this->materiServices->getDetailSoalJawaban($soal_id);
+
+        return view('admin.quiz.jawabandetailsoal',[
+            'soal_id' => $soal_id,
+            'materi_id' => $materi_id,
+            'data' => $response['data']
+        ]);
+
+    }
+
+    public function postDetailJawaban(Request $request){
+        $validator = Validator::make($request->all(), [
+            'soal_id' => 'required|numeric|exists:soal_materis,id',
+            'jawaban' => 'required',
+            'is_correct' => 'required|numeric'
+        ]);
+
+        if($validator->fails()){
+            dd($validator->errors()->first());
+            return back()->withErrors($validator->errors()->first());
+        }
+
+        $response = $this->materiServices->addJawaban($request->all());
+
+        return back()->withSuccess($response['message']);
+    }
+
     public function postJawaban(Request $request){
 
         $validator = Validator::make($request->all(), [
@@ -168,4 +202,50 @@ class MateriController extends Controller
             'materi_id' => $materi_id
         ]);
     }
+
+    public function indexQuizNonMateriFront($materi_id){
+        // $data = SoalMateri::with('jawaban')->where('materi_id', $materi_id)->where('type', 'nonmateri')->get();
+        return view('front.quiznonmateri',[
+            
+            'materi_id' => $materi_id
+        ]);
+    }
+
+    public function indexQuizList(){
+        $data = Materi::get();
+
+        return view('admin.quiz.index', [
+            'data' => $data
+        ]);
+    }
+
+
+    public function indexQuizNonMateri($materi_id){
+
+        $data = SoalMateri::with('jawaban')->where('materi_id', $materi_id)->where('type', 'nonmateri')->get();
+        return view('admin.quiz.detailmateri',[
+            'data' => $data,
+            'materi_id' => 1
+        ]);
+    }
+
+    public function storeQuizNonMateri(Request $request){
+        // dd($request->all());
+        $validator = Validator::make($request->all(), [
+            'materi_id' => 'required|numeric|exists:materis,id',
+            'soal' => 'required',
+        ]);
+
+        if($validator->fails()){
+            // dd($validator->errors()->first());
+            return back()->withErrors($validator->errors()->first());
+        }
+
+        // dd($request->all());
+        $response = $this->materiServices->addDetailSoal($request->all(), 'nonmateri');
+
+        return back()->withSuccess($response['message']);
+    }
+
+    
 }
