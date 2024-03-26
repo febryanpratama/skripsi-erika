@@ -8,6 +8,7 @@
                     <div class="card-header">
                         <h5>Form Tambah Jawaban</h5>
                         <small class="text-danger"> maksimal 4 jawaban di tiap soal </small>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores ipsum ex, temporibus dolore magni quae.
                     </div>
                     <form action="{{ url('admin/quiz/'.$materi_id.'/detail-jawaban') }}" method="POST" enctype="multipart/form-data">
                         @csrf

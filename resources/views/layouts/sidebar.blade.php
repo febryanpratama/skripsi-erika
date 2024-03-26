@@ -19,7 +19,7 @@
              </a>
           </li>
           <li class="nav-item nav-category">web apps</li>
-          <li class="nav-item ">
+          {{-- <li class="nav-item ">
              <a class="nav-link" data-bs-toggle="collapse" href="#email" role="button" aria-expanded="false" aria-controls="email">
              <i class="link-icon" data-feather="mail"></i>
              <span class="link-title">Email</span>
@@ -38,7 +38,7 @@
                    </li>
                 </ul>
              </div>
-          </li>
+          </li> --}}
           <li class="nav-item ">
              <a href="{{ url('admin/materi') }}" class="nav-link">
              <i class="link-icon" data-feather="message-square"></i>
@@ -51,14 +51,26 @@
              <span class="link-title">Quiz</span>
              </a>
           </li>
+          <li class="nav-item ">
+             <a href="{{ url('admin/quiz') }}" class="nav-link">
+             <i class="link-icon" data-feather="calendar"></i>
+             <span class="link-title">Bantuan</span>
+             </a>
+          </li>
+          <li class="nav-item ">
+             <a href="{{ url('admin/quiz') }}" class="nav-link">
+             <i class="link-icon" data-feather="calendar"></i>
+             <span class="link-title">Tentang Aplikasi</span>
+             </a>
+          </li>
           <li class="nav-item nav-category">Profile</li>
           
           <li class="nav-item nav-category">Docs</li>
           <li class="nav-item">
              <a href="https://www.nobleui.com/laravel/documentation/docs.html" target="_blank" class="nav-link">
              <i class="link-icon" data-feather="hash"></i>
-             <span class="link-title">Documentation</span>
-             </a>e
+             <span class="link-title">Logout</span>
+             </a>
           </li>
        </ul>
     </div>
