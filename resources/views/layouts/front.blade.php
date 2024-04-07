@@ -132,9 +132,9 @@
                 <div class="mobile-menu-overlay__body">
                     <nav class="offcanvas-navigation offcanvas-navigation--onepage" id="navbar">
                         <ul>
-                            <li>
+                            {{-- <li>
                                 <a href="{{ url('materi') }}"><span>Materi</span></a>
-                            </li>
+                            </li> --}}
                             <li>
                                 <a href="#"><span>Bantuan</span></a>
                             </li>
