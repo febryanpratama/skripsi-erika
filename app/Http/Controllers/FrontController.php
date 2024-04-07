@@ -94,4 +94,12 @@ class FrontController extends Controller
             'score' => $score
         ]);
     }
+
+    public function indexQuiz(){
+        return view('front.quiz');
+    }
+
+    public function indexBantuan(){
+        return view('front.bantuan');
+    }
 }

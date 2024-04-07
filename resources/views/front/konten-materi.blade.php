@@ -33,8 +33,8 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="card-footer d-flex justify-content-end">
-                                {{-- <a href="javascript:;" class="btn btn-sm btn-outline-success" id="back">Back</a> --}}
+                            <div class="card-footer d-flex justify-content-between">
+                                <a href="javascript:;" class="btn btn-sm btn-outline-success" id="back">Back</a>
                                 <a href="javascript:;" class="btn btn-sm btn-outline-info" id="next">Next</a>
                                 <a href="{{ url('materi/quiz/'.$data->id) }}" class="hide btn btn-sm btn-outline-info" id="btnquiz">Mulai Quiz</a>
                             </div>

@@ -48,8 +48,13 @@
         </style>
     </head>
 
+    {{-- {{ dd(Request::is('bantuan')) }} --}}
     <body>
-        <div class="header-area header-area--absolute">
+        <div class="header-area header-area--absolute" @if (Request::is('bantuan'))
+            style="background-color: #9a000c"
+        @endif @if (Request::is('tentang-aplikasi'))
+        style="background-color: #9a000c"
+    @endif>
             <div class="preview-header-inner header-sticky">
                 <div class="container-fluid container-fluid--cp-150">
                     <div class="row">
@@ -57,7 +62,7 @@
                             <div class="header position-relative">
                                 <!-- brand logo -->
                                 <div class="header__logo">
-                                    <a href="">
+                                    <a href="{{ url('/') }}">
                                         <img src="{{ asset('') }}images/cai-logo.png" width="160" height="48" class="img-fluid light-logo" alt="" />
                                         <img src="{{ asset('') }}images/cai-logo.png" width="160" height="48" class="img-fluid dark-logo" alt="" />
                                     </a>
@@ -65,15 +70,15 @@
                                 <!-- navigation menu -->
                                 <div class="header__navigation menu-style-four preview-menu d-none d-xl-block hide d-none" style="display: none" id="navbar">
                                     <nav class="navigation-menu navigation-menu--onepage navigation-menu-right hide">
-                                        <ul class="hide" id="navigation" style="display: none">
+                                        <ul id="navigation" >
                                             <li>
                                                 <a href="{{ url('materi') }}"><span>Materi</span></a>
                                             </li>
                                             <li>
-                                                <a href="#"><span>Bantuan</span></a>
+                                                <a href="{{ url('bantuan') }}"><span>Bantuan</span></a>
                                             </li>
                                             <li>
-                                                <a href="#"><span>Tentang Kami</span></a>
+                                                <a href="{{ url('tentang-aplikasi') }}"><span>Tentang Aplikasi</span></a>
                                             </li>
                                         </ul>
                                     </nav>

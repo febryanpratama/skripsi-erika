@@ -20,14 +20,27 @@ Route::get('/', function () {
     return view('front.index');
 });
 
+Route::get('application', function(){
+    return view('front.application');
+});
+
 
 Route::prefix('materi')->group(function(){
     Route::get('/', [FrontController::class, 'indexMateri']);
     Route::get('/{materi_id}/konten', [FrontController::class, 'indexKontenMateri']);
     Route::get('/quiz/{materi_id}', [MateriController::class, 'indexQuiz']);
     Route::get('/quiz/{materi_id}/nonmateri', [MateriController::class, 'indexQuizNonMateriFront']);
+});
 
+Route::prefix('quiz')->group(function(){
+    Route::get('/', [FrontController::class, 'indexQuiz']);
+});
 
+Route::get('bantuan', function(){
+    return view('front.bantuan');
+});
+Route::get('tentang-aplikasi', function(){
+    return view('front.tentang');
 });
 
 Route::get('/dashboard', function () {
