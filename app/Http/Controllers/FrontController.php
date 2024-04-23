@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\DetailMateri;
 use App\Models\JawabanMateri;
 use App\Models\Materi;
+use App\Models\QuizScore;
 use App\Models\SoalMateri;
 use Illuminate\Http\Request;
 
@@ -54,6 +55,15 @@ class FrontController extends Controller
             'data' => $data
         ]);
     }
+    public function getQuizNon(){
+        $data = SoalMateri::with('jawaban')->where('type', 'nonmateri')->get();
+
+        return response()->json([
+            'status' => true,
+            'message' => 'Success Get data',
+            'data' => $data
+        ]);
+    }
     
     public function getQuizNonMateri($materi_id){
         $data = SoalMateri::with('jawaban')->where('materi_id', $materi_id)->where('type', 'nonmateri')->get();
@@ -88,6 +98,11 @@ class FrontController extends Controller
 
         $score = ($total / $count) * 100;
 
+        QuizScore::create([
+            'score' => $score,
+            'tipe' => $data['tipe']
+        ]);
+
         return response()->json([
             'status' => true,
             'message' => 'Success Get data',
@@ -96,6 +111,7 @@ class FrontController extends Controller
     }
 
     public function indexQuiz(){
+
         return view('front.quiz');
     }
 

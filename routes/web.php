@@ -79,9 +79,9 @@ Route::group([
     Route::prefix('quiz')->group(function(){
         Route::get('/', [MateriController::class, 'indexQuizList']);
         Route::get('/{materi_id}', [MateriController::class, 'indexQuizNonMateri']);
-        Route::post('/{materi_id}', [MateriController::class, 'storeQuizNonMateri']);
-        Route::get('/{materi_id}/detail-jawaban/{soal_id}', [MateriController::class, 'getDetailJawaban']);
-        Route::post('/{materi_id}/detail-jawaban', [MateriController::class, 'postDetailJawaban']);
+        Route::post('/', [MateriController::class, 'storeQuizNonMateri']);
+        Route::get('/detail-jawaban/{soal_id}', [MateriController::class, 'getDetailJawabanNonMateri']);
+        Route::post('/detail-jawaban', [MateriController::class, 'postDetailJawaban']);
     });
 });
 

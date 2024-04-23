@@ -1,81 +1,76 @@
-@extends('layouts.main') @section('content')
-<div class="page-content">
-    <div class="row">
-        <div class="col-12 grid-margin">
-            <div class="card">
-                <div class="position-relative">
-                    <figure class="overflow-hidden mb-0 d-flex justify-content-center">
-                        <img src="{{ asset('') }}images/bg-materi.png" class="rounded-top" alt="profile cover" />
-                    </figure>
-                    <div class="d-flex justify-content-between align-items-center position-absolute top-90 w-100 px-2 px-md-4 mt-n4">
-                        <div>
-                            <img class="wd-70 rounded-circle" src="{{ asset('') }}admin/assets/images/faces/face1.jpg" alt="profile" />
-                            <span class="h4 ms-3 text-dark">{{ Auth::user()->name }}</span>
-                        </div>
-                        {{-- <div class="d-none d-md-block">
-                            <button class="btn btn-primary btn-icon-text">
-                                <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    width="24"
-                                    height="24"
-                                    viewBox="0 0 24 24"
-                                    fill="none"
-                                    stroke="currentColor"
-                                    stroke-width="2"
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                    class="feather feather-edit btn-icon-prepend"
-                                >
-                                    <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
-                                    <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
-                                </svg>
-                                Edit profile
-                            </button>
-                        </div> --}}
+@extends('layouts.main')
+
+@section('content')
+    <div class="page-content">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-header">
+                        <h5>Form Tambah Soal</h5>
                     </div>
-                </div>
-                <div class="d-flex justify-content-center p-3 rounded-bottom">
-                    <h2>Computer Aided System</h2>
+                    <form action="{{ url('admin/quiz') }}" method="POST" enctype="multipart/form-data">
+                        @csrf
+                        {{-- <input type="hidden" name="materi_id" value="{{ $materi_id }}"> --}}
+                        <div class="card-body">
+                            {{-- <div class="form-group mb-3">
+                                <label for="" class="control-label mb-2">Nomor Section</label>
+                                <input type="number" class="form-control" name="nomor_section">
+                            </div> --}}
+                            <div class="form-group mb-3">
+                                <label for="" class="control-label mb-2">Soal</label>
+                                <textarea name="soal" id="ckeditor" class="form-control ckeditor" cols="30" rows="10"></textarea>
+                            </div>
+                            {{-- <div class="form-group mb-3">
+                                <div class="d-flex justify-content-between mb-2">
+                                    <label for="" class="control-label">Gambar</label>
+                                    <button class="btn btn-sm btn-primary" type="button" id="addGambar"> + Gambar</button>
+                                </div>
+                                <div id="listImage">
+                                    <div class="d-flex mb-2">
+                                        <input type="file" class="form-control mr-2" name="gambar[]">
+                                        <button class="btn btn-sm btn-danger" onclick="removeTag()">Hapus</button>
+                                    </div>
+                                </div>
+                            </div> --}}
+                            <div class="form-group mb-3">
+                                <button type="submit" class="form-control btn btn-outline-success"> Simpan Data </button>
+                            </div>
+                        </div>
+                    </form>
                 </div>
             </div>
-        </div>
-    </div>
-    <div class="row profile-body d-flex justify-content-center">
-        <!-- left wrapper start -->
-        <div class="card p-2 mb-3">
-            <h3 class="text-center">Pilih Kategori Materi</h3>
-        </div>
-        @foreach ($data as $item)
-            <div class="d-none d-md-block col-md-4 col-xl-3 left-wrapper">
-                <div class="card rounded">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header">
+                        <h5>List Soal</h5>
+                    </div>
                     <div class="card-body">
-                        <div class="image">
-                            <img src="{{ asset('') }}images/profile.jpg" class="img-fluid" alt="" />
-                        </div>
-                        <div class="d-flex align-items-center justify-content-center mt-3 mb-2">
-                            <h4 class="card-title mb-0">{{ $item->nama_materi }}</h4>
-                            
-                        </div>
-                        {{-- <p>{{ $item->nama_materi }}</p> --}}
-                        
-                        <div class="mt-3">
-                            <a href="{{ url('admin/quiz/'.$item->id) }}">
-                                <button class="form-control btn btn-outline-primary" id="tambahMateri">Tambah Soal</button>
-                            </a>
+                        <div class="table-responsive">
+                            <table class="table table-striped">
+                                <thead class="text-center">
+                                    <tr class="text-center">
+                                        <th width="5%">Nomor</th>
+                                        <th>Soal</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach ($data as $key=>$item)
+                                        <tr class="">
+                                            <td>{{ $key+1 }}</td>
+                                            <td>{{ $item->soal }}</td>
+                                            <td>
+                                                <a href="{{ url('admin/quiz/detail-jawaban/'.$item->id) }}" class="btn btn-sm btn-primary">Jawaban</a>
+                                                <a href="{{ url('admin/quiz/detail-jawaban/'.$item->id) }}" class="btn btn-sm btn-danger">Hapus</a>
+                                            </td>
+                                        </tr>
+                                    @endforeach
+                                </tbody>
+                            </table>
                         </div>
                     </div>
                 </div>
             </div>
-        @endforeach
+        </div>
     </div>
-</div>
-@endsection @section('scripts')
-<script>
-    $(document).ready(function () {
-        $("#tambahMateri").on("click", function () {
-            $(".list").addClass("hide");
-            $(".add").removeClass("hide");
-        });
-    });
-</script>
 @endsection

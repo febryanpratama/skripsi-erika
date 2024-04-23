@@ -13,7 +13,7 @@
        <ul class="nav">
           <li class="nav-item nav-category">Main</li>
           <li class="nav-item active">
-             <a href="https://www.nobleui.com/laravel/template/demo1" class="nav-link">
+             <a href="{{ url('dashboard') }}" class="nav-link">
              <i class="link-icon" data-feather="box"></i>
              <span class="link-title">Dashboard</span>
              </a>

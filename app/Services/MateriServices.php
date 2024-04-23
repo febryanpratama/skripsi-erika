@@ -48,7 +48,7 @@ class MateriServices{
 
     static function addDetailSoal($data, $type){
         SoalMateri::create([
-            'materi_id' => $data['materi_id'],
+            'materi_id' => $type == 'nonmateri' ? 0 : $data['materi_id'],
             'soal' => $data['soal'],
             'type' => $type,
         ]);

@@ -221,7 +221,7 @@ class MateriController extends Controller
     }
 
     public function indexQuizList(){
-        $data = Materi::get();
+        $data = SoalMateri::with('jawaban')->where('type', 'nonmateri')->get();
 
         return view('admin.quiz.index', [
             'data' => $data
@@ -241,7 +241,7 @@ class MateriController extends Controller
     public function storeQuizNonMateri(Request $request){
         // dd($request->all());
         $validator = Validator::make($request->all(), [
-            'materi_id' => 'required|numeric|exists:materis,id',
+            // 'materi_id' => 'required|numeric|exists:materis,id',
             'soal' => 'required',
         ]);
 
@@ -254,6 +254,15 @@ class MateriController extends Controller
         $response = $this->materiServices->addDetailSoal($request->all(), 'nonmateri');
 
         return back()->withSuccess($response['message']);
+    }
+
+    public function getDetailJawabanNonMateri($soal_id){
+        $response = $this->materiServices->getDetailSoalJawaban($soal_id);
+
+        return view('admin.quiz.jawabandetailsoal',[
+            'soal_id' => $soal_id,
+            'data' => $response['data']
+        ]);
     }
 
     
