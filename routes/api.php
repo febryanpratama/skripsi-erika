@@ -23,3 +23,5 @@ Route::get('/detail-konten/{id}', [FrontController::class, 'getDetailKontenMater
 Route::get('/get-quiz/{materi_id}', [FrontController::class, 'getQuiz']);
 Route::get('/get-quiz-nonmateri/{materi_id}', [FrontController::class, 'getQuizNonMateri']);
 Route::post('/quiz/submit', [FrontController::class, 'submitQuiz']);
+
+Route::post('get-jawaban', [FrontController::class, 'getJawaban']);

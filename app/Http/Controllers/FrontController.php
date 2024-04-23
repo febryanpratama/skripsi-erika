@@ -102,4 +102,27 @@ class FrontController extends Controller
     public function indexBantuan(){
         return view('front.bantuan');
     }
+
+    public function getJawaban(Request $request){
+        $data = $request->all();
+
+        $jawaban = JawabanMateri::where('soal_id', $data['soal_id'])->where('id', $data['jawaban_id'])->first();
+
+        if($jawaban->is_correct == 1){
+            $list = [
+                'status' => true,
+                'data' => $jawaban->jawaban
+            ];
+
+            return response()->json($list);
+        }else{
+            $getJawabanTrue = JawabanMateri::where('soal_id', $data['soal_id'])->where('is_correct', 1)->first();
+            $list = [
+                'status' => false,
+                'data' => $getJawabanTrue->jawaban
+            ];
+
+            return response()->json($list);
+        }
+    }
 }
