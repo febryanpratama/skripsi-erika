@@ -108,7 +108,7 @@
             // console.log(respArray)
 
             $.ajax({
-                url: '{{ url("api/get-quiz-non") }}',
+                url: '{{ url("api/get-quiz/$materi_id") }}',
                 method: 'GET',
                 dataType: 'json', // Change this to the appropriate data type
                 success: function(response) {
@@ -176,10 +176,11 @@
                 `)
 
                 indexData++
-                console.log(indexData + " Index Mulai")
+                // console.log(indexData + " Index Mulai")
             })
 
             $('#next').on('click', function(e){
+                console.log(quiz+"nextt")
                 $('#truejawaban').html('')
 
                 let jawaban_id
@@ -196,6 +197,7 @@
                 }
 
                 if(indexData >= respArray[0].length){
+                    // console.log(quiz)
                     $('#next').addClass('hide')
                     $('#selesai').removeClass('hide')
                 }
@@ -245,14 +247,16 @@
                 let selectedValue = $("input:radio[class='radioCheck']:checked").val()
                 let selectedText = $("input:radio[class='radioCheck']").val()
 
+                // console.log(selectedValue+" Selected Value")
                 // console.log(respArray[0][indexData-1].soal+("Soal dikurangin index"))
 
                 // indexData
+                // console.log(jawaban_id+" Jawaban ID");
                 quiz.push({
                     soal_id: respArray[0][indexData-1].id,
                     soal: respArray[0][indexData-1].soal,
-                    jawaban_id: jawaban_id[0],
-                    jawaban: selectedValue
+                    jawaban_id: jawaban_id == undefined ? jawaban_id[0] : jawaban_id,
+                    jawaban: jawaban_id
                 })
 
                 console.log(quiz)

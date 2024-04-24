@@ -27,54 +27,45 @@
                                             Rules. Anda Tidak dapat mengulangi pertanyaan sebelumnya. Jika anda melakukan hal tersebut, maka seluruh jawaban yang telah anda simpan akan direset dan memulai kembali dari awal. Beware !!!
                                         </h6>
                                     </div>
-                                    {{-- <div class="col-md-8">
-                                        <div class="text-center">
-                                            <img src="{{ asset('') }}images/score.jpg" style="width: 50%;height:60%" alt="">
-                                        </div>
-                                        <div class="text-center">
-                                            <h4 id="deskripsi">
-                                                Score Anda 
-                                            </h4>
-                                            <h1 id="deskripsi">
-                                                100 / <span class="text-success">100</span>
-                                            </h1>
-                                            <h4>
-                                                Silahkan klik tombol selesai untuk kembali ke beranda
-                                            </h4>
-                                        </div>
-                                    </div> --}}
-                                    {{-- <div class="col-md-8 col-xs-offset-1">
+                                </div>
+
+                                {{-- <div class="row mt-2 d-flex justify-content-center" id="jawaban">
+                                    <div class="col-md-8 col-xs-offset-1">
                                         <div class="radio">
                                             <label class="d-flex">
-                                                <input type="radio" name="rdo_pkdrop" style="margin-right: 20px" value="0" id="rdo_pick">
-                                                <h6>Ini Merupakan Jawaban 1</h6>
+                                                <input type="radio" name="jawaban_materi" class="radioCheck" onclick="getJawaban(1,1)" style="margin-right: 20px" value="1" id="rdo_pick">
+                                                <h6>Jawaban 1</h6>
                                             </label>
                                         </div>
                                         <div class="radio">
                                             <label class="d-flex">
-                                                <input type="radio" name="rdo_pkdrop" style="margin-right: 20px" value="0" id="rdo_pick">
-                                                <h6>Ini Merupakan Jawaban 2</h6>
+                                                <input type="radio" name="jawaban_materi" class="radioCheck" onclick="getJawaban(1,2)" style="margin-right: 20px" value="2" id="rdo_pick">
+                                                <h6>Jawaban 2</h6>
                                             </label>
                                         </div>
                                         <div class="radio">
                                             <label class="d-flex">
-                                                <input type="radio" name="rdo_pkdrop" style="margin-right: 20px" value="0" id="rdo_pick">
-                                                <h6>Ini Merupakan Jawaban 3</h6>
+                                                <input type="radio" name="jawaban_materi" class="radioCheck" onclick="getJawaban(1,7)" style="margin-right: 20px" value="7" id="rdo_pick">
+                                                <h6>Jawaban 3</h6>
                                             </label>
                                         </div>
                                         <div class="radio">
                                             <label class="d-flex">
-                                                <input type="radio" name="rdo_pkdrop" style="margin-right: 20px" value="0" id="rdo_pick">
-                                                <h6>Ini Merupakan Jawaban 4</h6>
+                                                <input type="radio" name="jawaban_materi" class="radioCheck" onclick="getJawaban(1,8)" style="margin-right: 20px" value="8" id="rdo_pick">
+                                                <h6>Jawaban 4</h6>
                                             </label>
-                                        </div> --}}
-                                    {{-- </div> --}}
+                                        </div>
+                                    </div>
+                                </div> --}}
+
+                                <div class="row mt-2 d-flex justify-content-center" id="truejawaban">
+                                    
                                 </div>
 
                                 
                             </div>
-                            <div class="card-footer d-flex justify-content-end">
-                                {{-- <a href="javascript:;" class="btn btn-sm btn-outline-success" id="back">Back</a> --}}
+                            <div class="card-footer d-flex justify-content-between">
+                                <a href="javascript:;" class="btn btn-sm btn-outline-success" id="back">Back</a>
                                 <a href="javascript:;" class="btn btn-sm btn-outline-info " id="mulai">Mulai</a>
                                 <a href="javascript:;" class="btn btn-sm btn-outline-info hide" id="next">Selanjutnya</a>
                                 <a href="javascript:;" class="btn btn-sm btn-outline-info hide" id="selesai">Hitung Score Anda</a>
@@ -117,7 +108,7 @@
             // console.log(respArray)
 
             $.ajax({
-                url: '{{ url("api/get-quiz-nonmateri/$materi_id") }}',
+                url: '{{ url("api/get-quiz-non") }}',
                 method: 'GET',
                 dataType: 'json', // Change this to the appropriate data type
                 success: function(response) {
@@ -146,6 +137,8 @@
             let indexData = 0
 
             $('#mulai').on('click', function(e){
+                $('#truejawaban').html('')
+
                 console.log(respArray)
 
                 $('#mulai').addClass('hide')
@@ -157,25 +150,25 @@
                 <div class="col-md-8 col-xs-offset-1">
                     <div class="radio">
                         <label class="d-flex">
-                            <input type="radio" name="jawaban_materi" class="radioCheck" style="margin-right: 20px" value="`+respArray[0][indexData].jawaban[0].id+`" id="rdo_pick">
+                            <input type="radio" name="jawaban_materi" class="radioCheck" onClick="getJawaban(`+respArray[0][indexData].id+`,`+respArray[0][indexData].jawaban[0].id+`)" style="margin-right: 20px" value="`+respArray[0][indexData].jawaban[0].id+`" id="rdo_pick">
                             <h6>`+respArray[0][indexData].jawaban[0].jawaban+`</h6>
                         </label>
                     </div>
                     <div class="radio">
                         <label class="d-flex">
-                            <input type="radio" name="jawaban_materi" class="radioCheck" style="margin-right: 20px" value="`+respArray[0][indexData].jawaban[1].id+`" id="rdo_pick">
+                            <input type="radio" name="jawaban_materi" class="radioCheck" onClick="getJawaban(`+respArray[0][indexData].id+`,`+respArray[0][indexData].jawaban[1].id+`)" style="margin-right: 20px" value="`+respArray[0][indexData].jawaban[1].id+`" id="rdo_pick">
                             <h6>`+respArray[0][indexData].jawaban[1].jawaban+`</h6>
                         </label>
                     </div>
                     <div class="radio">
                         <label class="d-flex">
-                            <input type="radio" name="jawaban_materi" class="radioCheck" style="margin-right: 20px" value="`+respArray[0][indexData].jawaban[2].id+`" id="rdo_pick">
+                            <input type="radio" name="jawaban_materi" class="radioCheck" onClick="getJawaban(`+respArray[0][indexData].id+`,`+respArray[0][indexData].jawaban[2].id+`)" style="margin-right: 20px" value="`+respArray[0][indexData].jawaban[2].id+`" id="rdo_pick">
                             <h6>`+respArray[0][indexData].jawaban[2].jawaban+`</h6>
                         </label>
                     </div>
                     <div class="radio">
                         <label class="d-flex">
-                            <input type="radio" name="jawaban_materi" class="radioCheck" style="margin-right: 20px" value="`+respArray[0][indexData].jawaban[3].id+`" id="rdo_pick">
+                            <input type="radio" name="jawaban_materi" class="radioCheck" onClick="getJawaban(`+respArray[0][indexData].id+`,`+respArray[0][indexData].jawaban[3].id+`)" style="margin-right: 20px" value="`+respArray[0][indexData].jawaban[3].id+`" id="rdo_pick">
                             <h6>`+respArray[0][indexData].jawaban[3].jawaban+`</h6>
                         </label>
                     </div>
@@ -183,10 +176,13 @@
                 `)
 
                 indexData++
-                console.log(indexData + " Index Mulai")
+                // console.log(indexData + " Index Mulai")
             })
 
             $('#next').on('click', function(e){
+                console.log(quiz+"nextt")
+                $('#truejawaban').html('')
+
                 let jawaban_id
                 if(!$("input:radio[class='radioCheck']").is(":checked")) {
                     //write your code         
@@ -201,6 +197,7 @@
                 }
 
                 if(indexData >= respArray[0].length){
+                    // console.log(quiz)
                     $('#next').addClass('hide')
                     $('#selesai').removeClass('hide')
                 }
@@ -220,25 +217,25 @@
                     <div class="col-md-8 col-xs-offset-1">
                         <div class="radio">
                             <label class="d-flex">
-                                <input type="radio" name="jawaban_materi" class="radioCheck" style="margin-right: 20px" value="`+respArray[0][indexData].jawaban[0].id+`" id="rdo_pick">
+                                <input type="radio" name="jawaban_materi" class="radioCheck" onClick="getJawaban(`+respArray[0][indexData].id+`,`+respArray[0][indexData].jawaban[0].id+`)" style="margin-right: 20px" value="`+respArray[0][indexData].jawaban[0].id+`" id="rdo_pick">
                                 <h6>`+respArray[0][indexData].jawaban[0].jawaban+`</h6>
                             </label>
                         </div>
                         <div class="radio">
                             <label class="d-flex">
-                                <input type="radio" name="jawaban_materi" class="radioCheck" style="margin-right: 20px" value="`+respArray[0][indexData].jawaban[1].id+`" id="rdo_pick">
+                                <input type="radio" name="jawaban_materi" class="radioCheck" onClick="getJawaban(`+respArray[0][indexData].id+`,`+respArray[0][indexData].jawaban[0].id+`)" style="margin-right: 20px" value="`+respArray[0][indexData].jawaban[1].id+`" id="rdo_pick">
                                 <h6>`+respArray[0][indexData].jawaban[1].jawaban+`</h6>
                             </label>
                         </div>
                         <div class="radio">
                             <label class="d-flex">
-                                <input type="radio" name="jawaban_materi" class="radioCheck" style="margin-right: 20px" value="`+respArray[0][indexData].jawaban[2].id+`" id="rdo_pick">
+                                <input type="radio" name="jawaban_materi" class="radioCheck" onClick="getJawaban(`+respArray[0][indexData].id+`,`+respArray[0][indexData].jawaban[0].id+`)" style="margin-right: 20px" value="`+respArray[0][indexData].jawaban[2].id+`" id="rdo_pick">
                                 <h6>`+respArray[0][indexData].jawaban[2].jawaban+`</h6>
                             </label>
                         </div>
                         <div class="radio">
                             <label class="d-flex">
-                                <input type="radio" name="jawaban_materi" class="radioCheck" style="margin-right: 20px" value="`+respArray[0][indexData].jawaban[3].id+`" id="rdo_pick">
+                                <input type="radio" name="jawaban_materi" class="radioCheck" onClick="getJawaban(`+respArray[0][indexData].id+`,`+respArray[0][indexData].jawaban[0].id+`)" style="margin-right: 20px" value="`+respArray[0][indexData].jawaban[3].id+`" id="rdo_pick">
                                 <h6>`+respArray[0][indexData].jawaban[3].jawaban+`</h6>
                             </label>
                         </div>
@@ -250,14 +247,16 @@
                 let selectedValue = $("input:radio[class='radioCheck']:checked").val()
                 let selectedText = $("input:radio[class='radioCheck']").val()
 
+                // console.log(selectedValue+" Selected Value")
                 // console.log(respArray[0][indexData-1].soal+("Soal dikurangin index"))
 
                 // indexData
+                // console.log(jawaban_id+" Jawaban ID");
                 quiz.push({
                     soal_id: respArray[0][indexData-1].id,
                     soal: respArray[0][indexData-1].soal,
-                    jawaban_id: jawaban_id[0],
-                    jawaban: selectedValue
+                    jawaban_id: jawaban_id == undefined ? jawaban_id[0] : jawaban_id,
+                    jawaban: jawaban_id
                 })
 
                 console.log(quiz)
@@ -276,11 +275,11 @@
                 
             })
 
-            console.log(indexData+" INdex Now")
 
             
             $('#selesai').on('click', function(e){
                 // console.log(quiz)
+                $('#truejawaban').html('')
 
                 $.ajax({
                     url: '{{ url("api/quiz/submit") }}',
@@ -326,5 +325,41 @@
             })
 
         })
+
+        function getJawaban(soal_id, jawaban_id){
+            console.log(soal_id)
+            console.log(jawaban_id)
+
+            $.ajax({
+                url: '{{ url("api/get-jawaban") }}',
+                method: 'POST',
+                data: {
+                    soal_id: soal_id,
+                    jawaban_id: jawaban_id
+                },
+                dataType: 'json', // Change this to the appropriate data type
+                success: function(response) {
+                    // Handle the successful response here
+                    // console.log(response);
+                    if(response.status == true){
+                        $('#truejawaban').html(`
+                            <div class="col-md-8 col-xs-offset-1">
+                                <hr>
+                                <h4 class="text-success"> BENAR </h4>
+                                <p>`+response.data+`</p>
+                            </div>
+                        `)
+                    }else{
+                        $('#truejawaban').html(`
+                            <div class="col-md-8 col-xs-offset-1">
+                                <hr>
+                                <h4 class="text-danger"> SALAH </h4>
+                                <p>`+response.data+`</p>
+                            </div>
+                        `)
+                    }
+                },
+            })
+        }
     </script>
 @endsection

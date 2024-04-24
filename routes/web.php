@@ -33,7 +33,7 @@ Route::prefix('materi')->group(function(){
 });
 
 Route::prefix('quiz')->group(function(){
-    Route::get('/', [FrontController::class, 'indexQuiz']);
+    Route::get('/', [FrontController::class, 'indexQuizNonMateri']);
 });
 
 Route::get('bantuan', function(){

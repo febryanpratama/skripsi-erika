@@ -87,12 +87,23 @@ class FrontController extends Controller
         $listcorrect = [];
 
         for($i = 0; $i < $count; $i++){
-            // dd($data['quiz'][$i]);
-            $jawaban = JawabanMateri::where('soal_id', $data['quiz'][$i]['soal_id'])->where('id', $data['quiz'][$i]['jawaban_id'])->first();
+            // dd($data['quiz'][1]['soal_id']);
+            $soal_id = $data['quiz'][$i]['soal_id'];
+            $jawaban_id = $data['quiz'][$i]['jawaban_id'];
+
+            // dd($soal_id.'-'.$jawaban_id);
+            $jawaban = JawabanMateri::where('soal_id', $soal_id)->where('id', $jawaban_id)->first();
+            
+            // dd($jawaban);
+            // dd($jawaban->is_correct);
             if($jawaban->is_correct == 1){
                 $listcorrect[] = 1;
             }
+            // if($jawaban){
+            // }
         }
+
+        // dd($listcorrect);
 
         $total = count($listcorrect);
 
@@ -100,7 +111,7 @@ class FrontController extends Controller
 
         QuizScore::create([
             'score' => $score,
-            'tipe' => $data['tipe']
+            'tipe' => 'materi'
         ]);
 
         return response()->json([

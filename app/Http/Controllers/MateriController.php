@@ -211,6 +211,11 @@ class MateriController extends Controller
             'materi_id' => $materi_id
         ]);
     }
+    // public function indexQuizNonMateri($materi_id){
+    //     return view('front.quiz', [
+    //         'materi_id' => $materi_id
+    //     ]);
+    // }
 
     public function indexQuizNonMateriFront($materi_id){
         // $data = SoalMateri::with('jawaban')->where('materi_id', $materi_id)->where('type', 'nonmateri')->get();
