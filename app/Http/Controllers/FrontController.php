@@ -20,6 +20,10 @@ class FrontController extends Controller
         ]);
     }
 
+    public function indexQuizNonMateri(){
+        return view('front.quiznonmateri');
+    }
+
     public function indexKontenMateri($materi_id){
         $data = Materi::with('detail')->where('id', $materi_id)->first();
 
