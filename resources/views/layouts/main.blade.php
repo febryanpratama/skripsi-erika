@@ -45,7 +45,11 @@
 
       <script>
          tinymce.init({
-           selector: '#ckeditor'
+            selector: '#ckeditor',
+            
+            // plugins: 'image',
+            // toolbar: 'image',
+            // a11y_advanced_options: true
          });
        </script>
       <style>

@@ -22,14 +22,15 @@
                                 </div>
                                 <div class="row mt-2 d-flex justify-content-center">
                                     <div class="col-md-8">
+                                        
+                                        <p id="deskripsi">
+                                            Selamat datang di materi <b>{{ $data->nama_materi }}</b>. Materi ini akan membahas tentang <b>{{ $data->deskripsi }}</b>. Silahkan klik next untuk melanjutkan ke materi selanjutnya.
+                                        </p>
                                         <span class="audioo hide">
                                             <audio controls>
                                                 <source src="" type="audio/mpeg">
                                             </audio>
                                         </span>
-                                        <p id="deskripsi">
-                                            Selamat datang di materi <b>{{ $data->nama_materi }}</b>. Materi ini akan membahas tentang <b>{{ $data->deskripsi }}</b>. Silahkan klik next untuk melanjutkan ke materi selanjutnya.
-                                        </p>
                                     </div>
                                 </div>
                             </div>
