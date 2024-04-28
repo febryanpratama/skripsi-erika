@@ -89,4 +89,22 @@ class MateriServices{
             "message" => "Berhasil Menambahkan Jawaban"
         ];
     }
+
+    static function editJawaban($data){
+        if($data['is_correct'] == 1){
+            JawabanMateri::where('soal_id', $data['soal_id'])->update([
+                'is_correct' => 0
+            ]);
+        }
+
+        JawabanMateri::where('id', $data['jawaban_id'])->update([
+            'jawaban' => $data['jawaban'],
+            'is_correct' => $data['is_correct']
+        ]);
+
+        return [
+            "status" => true,
+            "message" => "Berhasil Mengedit Jawaban"
+        ];
+    }
 }

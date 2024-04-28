@@ -28,7 +28,7 @@
                 <div class="card">
                    <div class="card-body">
                       <div class="d-flex justify-content-between align-items-baseline">
-                         <h6 class="card-title mb-0">New Customers</h6>
+                         <h6 class="card-title mb-0">Jumlah Materi</h6>
                          <div class="dropdown mb-2">
                             <button class="btn btn-link p-0" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <i class="icon-lg text-muted pb-3px" data-feather="more-horizontal"></i>
@@ -44,13 +44,13 @@
                       </div>
                       <div class="row">
                          <div class="col-6 col-md-12 col-xl-5">
-                            <h3 class="mb-2">3,897</h3>
-                            <div class="d-flex align-items-baseline">
+                            <h3 class="mb-2">3</h3>
+                            {{-- <div class="d-flex align-items-baseline">
                                <p class="text-success">
                                   <span>+3.3%</span>
                                   <i data-feather="arrow-up" class="icon-sm mb-1"></i>
                                </p>
-                            </div>
+                            </div> --}}
                          </div>
                          <div class="col-6 col-md-12 col-xl-7">
                             <div id="customersChart" class="mt-md-3 mt-xl-0"></div>
@@ -59,7 +59,7 @@
                    </div>
                 </div>
              </div>
-             <div class="col-md-4 grid-margin stretch-card">
+             {{-- <div class="col-md-4 grid-margin stretch-card">
                 <div class="card">
                    <div class="card-body">
                       <div class="d-flex justify-content-between align-items-baseline">
@@ -128,7 +128,7 @@
                       </div>
                    </div>
                 </div>
-             </div>
+             </div> --}}
           </div>
        </div>
     </div>
@@ -137,7 +137,7 @@
         <div class="card">
           <div class="card-body">
             <div class="d-flex justify-content-between align-items-baseline mb-2">
-              <h6 class="card-title mb-0">Monthly sales</h6>
+              <h6 class="card-title mb-0">Grafik Nilai Siswa</h6>
               <div class="dropdown mb-2">
                 <button class="btn btn-link p-0" type="button" id="dropdownMenuButton4" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-horizontal icon-lg text-muted pb-3px"><circle cx="12" cy="12" r="1"></circle><circle cx="19" cy="12" r="1"></circle><circle cx="5" cy="12" r="1"></circle></svg>
@@ -286,7 +286,7 @@
         dataLabels: {
           enabled: true,
           formatter: function (val) {
-            return val + "%";
+            return val + " / 100";
           },
           offsetY: -20,
           style: {

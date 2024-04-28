@@ -25,7 +25,7 @@ class Format{
 
         $total = array_sum($list)/count($list);
 
-        return $total;
+        return floor($total);
 
     }
 }

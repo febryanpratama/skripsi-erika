@@ -27,8 +27,8 @@
                             
                             <div class="form-group mb-3">
                                 <div class="d-flex justify-content-between mb-2">
-                                    <label for="" class="control-label">Gambar</label>
-                                    <button class="btn btn-sm btn-primary" type="button" id="addGambar"> + Gambar</button>
+                                    <label for="" class="control-label">File</label>
+                                    <button class="btn btn-sm btn-primary" type="button" id="addGambar"> + File</button>
                                 </div>
                                 <div id="listImage">
                                     <div class="d-flex mb-2">
@@ -51,32 +51,64 @@
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
-                            <table class="table table-striped">
+                            <table class="table table-bordered">
                                 <thead class="text-center">
                                     <tr class="text-center">
                                         <th width="5%">Nomor</th>
                                         <th>Nomor Section</th>
-                                        <th>Isi Konten</th>
+                                        <th wid>Isi Konten</th>
                                         <th>Jumlah Gambar</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     @foreach ($data as $key=>$item)
+
+                                    {{-- {{ dd($item) }} --}}
                                         <tr class="">
                                             <td>{{ $key+1 }}</td>
                                             <td>Section {{ $item->nomor_section }}</td>
                                             <td>{!! $item->isi_konten !!}</td>
-                                            <td>2 Gambar</td>
+                                            <td>{{ count(json_decode($item->gambar)) }}</td>
                                             <td>
-                                                <a href="{{ url('admin/materi/detail-materi/'.$item->id) }}" class="btn btn-sm btn-primary">Lihat</a>
-                                                <a href="{{ url('admin/materi/detail-materi/'.$item->id) }}" class="btn btn-sm btn-danger">Hapus</a>
+                                                <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#exampleModal{{ $item->id }}">
+                                                    Lihat File
+                                                </button>
+                                                <a href="{{ url('admin/materi/detail-materi/delete/'.$item->id) }}" class="btn btn-sm btn-outline-danger">Hapus</a>
                                             </td>
+
+                                            {{-- {{ dd($item->gambar) }} --}}
                                         </tr>
+
+                                        <div class="modal fade" id="exampleModal{{ $item->id }}" tabindex="-1" aria-labelledby="exampleModalLabel{{ $item->id }}" aria-hidden="true">
+                                            <div class="modal-dialog modal-lg">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title" id="exampleModalLabel{{ $item->id }}">Ubah {{ $item->nama_materi }}</h5>
+                                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="btn-close"></button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        @foreach (json_decode($item['gambar']) as $item)
+                                                            {{-- {{ dd($item->image) }} --}}
+                                                            <div class="col-md-6">
+                                                                <img src="{{ asset('gambar_materi/'.$item->image) }}" class="img-thumbnail" alt="">
+                                                            </div>
+                                                        @endforeach
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                        <button type="submit" class="btn btn-primary">Save changes</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                     @endforeach
                                 </tbody>
                             </table>
                         </div>
+                        <a href="{{ url('admin/materi') }}">
+                            <button class="btn btn-danger mt-4" >Kembali</button>
+                        </a>
                     </div>
                 </div>
             </div>

@@ -1,6 +1,8 @@
 @extends('layouts.main')
 
 @section('content')
+
+{{-- {{ dd(session('error')) }} --}}
     <div class="page-content">
         <div class="row">
             <div class="col-md-4">
@@ -61,10 +63,52 @@
                                             <td>{{ $item->jawaban }}</td>
                                             <td class={{ $item->is_correct ? 'text-success' : 'text-danger' }}>{{ $item->is_correct ? 'Benar' : 'Salah' }}</td>
                                             <td>
-                                                <a href="{{ url('admin/materi/detail-soal/'.$item->id) }}" class="btn btn-sm btn-primary">Jawaban</a>
-                                                <a href="{{ url('admin/materi/detail-soal/'.$item->id) }}" class="btn btn-sm btn-danger">Hapus</a>
+                                                <button type="button" class="btn btn-outline-warning" data-bs-toggle="modal" data-bs-target="#exampleModal{{ $item->id }}">
+                                                    Ubah
+                                                </button>
+                                                {{-- <a href="{{ url('admin/materi/detail-jawaban/delete/'.$item->id) }}" class="btn btn-sm btn-outline-danger">Hapus</a> --}}
                                             </td>
                                         </tr>
+                                        <div class="modal fade" id="exampleModal{{ $item->id }}" tabindex="-1" aria-labelledby="exampleModalLabel{{ $item->id }}" aria-hidden="true">
+                                            <form action="{{ url('admin/materi/detail-jawaban/edit') }}" method="POST">
+                                                <div class="modal-dialog">
+                                                    @csrf
+                                                    <input type="hidden" name="soal_id" value="{{ $soal_id }}">
+                                                    <input type="hidden" value="{{ $item->id }}" name="jawaban_id" id="">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h5 class="modal-title" id="exampleModalLabel{{ $item->id }}">Ubah :  {{ $item->jawaban }}</h5>
+                                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="btn-close"></button>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            <div class="col-md-12">
+                                                                <label for="" class="label-control"> Jawaban</label>
+                                                                <input type="text" class="form-control" value="{{ $item->jawaban }}" name="jawaban">
+                                                            </div>
+                                                            <div class="col-md-12 mt-2">
+                                                                <div class="form-group mb-3">
+                                                                    <label for="" class="control-label">Value Jawaban</label>
+                                                                    <div class="d-flex justify-content-evenly">
+                                                                        <div class="d-flex">
+                                                                            <input type="radio" name="is_correct" value="1" class="mr-2">
+                                                                            <label for="" class="form-contol control-label">Benar</label>
+                                                                        </div>
+                                                                        <div class="d-flex ml-3">
+                                                                            <input type="radio" name="is_correct" value="0" class="mr-2">
+                                                                            <label for="" class="form-contol control-label">Salah</label>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                            <button type="submit" class="btn btn-primary">Save changes</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
                                     @endforeach
                                 </tbody>
                             </table>

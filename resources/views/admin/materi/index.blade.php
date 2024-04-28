@@ -214,8 +214,40 @@
                                     </svg>
                                     <p class="d-none d-md-block ms-2">Tambah Soal</p>
                                 </a>
+                                <button type="button" class="btn btn-outline-warning" data-bs-toggle="modal" data-bs-target="#exampleModal{{ $item->id }}">
+                                    Ubah Materi
+                                </button>
                             </div>
                         </div>
+                    </div>
+                </div>
+
+                <div class="modal fade" id="exampleModal{{ $item->id }}" tabindex="-1" aria-labelledby="exampleModalLabel{{ $item->id }}" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <form action="{{ url('admin/materi/edit') }}" method="POST">
+                            @csrf
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel{{ $item->id }}">Ubah {{ $item->nama_materi }}</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="btn-close"></button>
+                              </div>
+                              <div class="modal-body">
+                                <input type="hidden" name="materi_id" value="{{ $item->id }}">
+                                <div class="form-group mt-2">
+                                    <label for="" class="control-label">Nama Materi</label>
+                                    <input type="text" class="form-control" name="nama_materi" value="{{ $item->nama_materi }}" id="nama_materi" placeholder="Nama Materi" />
+                                </div>
+                                <div class="form-group mt-2">
+                                    <label for="" class="control-label">Deskripsi Materi</label>
+                                    <input type="text" class="form-control" name="deskripsi" value="{{ $item->deskripsi }}" id="deskripsi" placeholder="Deskripsi Materi" />
+                                </div>
+                              </div>
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <button type="submit" class="btn btn-primary">Save changes</button>
+                              </div>
+                            </div>
+                        </form>
                     </div>
                 </div>
                 @endforeach

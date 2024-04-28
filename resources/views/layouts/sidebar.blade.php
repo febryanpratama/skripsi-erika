@@ -51,26 +51,33 @@
              <span class="link-title">Quiz</span>
              </a>
           </li>
-          <li class="nav-item ">
-             <a href="{{ url('admin/quiz') }}" class="nav-link">
+          <li class="nav-item">
+             <a href="{{ url('admin/users') }}" class="nav-link">
              <i class="link-icon" data-feather="calendar"></i>
-             <span class="link-title">Bantuan</span>
+             <span class="link-title">Manajemen User</span>
              </a>
           </li>
-          <li class="nav-item ">
+          {{-- <li class="nav-item ">
              <a href="{{ url('admin/quiz') }}" class="nav-link">
              <i class="link-icon" data-feather="calendar"></i>
              <span class="link-title">Tentang Aplikasi</span>
              </a>
-          </li>
+          </li> --}}
           <li class="nav-item nav-category">Profile</li>
           
           <li class="nav-item nav-category">Docs</li>
           <li class="nav-item">
-             <a href="https://www.nobleui.com/laravel/documentation/docs.html" target="_blank" class="nav-link">
+            <form action="{{ url('logout') }}" method="POST">
+               @csrf
+               {{-- <input type="hidden" name="logout" value="1"> --}}
+               <a href="#" class="nav-link" onclick="this.closest('form').submit()">
+               <i class="link-icon" data-feather="hash"></i>
+               <span class="link-title"> Logout</span>
+            </form>
+             {{-- <a href="#" target="_blank" class="nav-link">
              <i class="link-icon" data-feather="hash"></i>
              <span class="link-title">Logout</span>
-             </a>
+             </a> --}}
           </li>
        </ul>
     </div>

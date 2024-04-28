@@ -61,9 +61,36 @@
                                             <td>{{ $item->soal }}</td>
                                             <td>
                                                 <a href="{{ url('admin/quiz/detail-jawaban/'.$item->id) }}" class="btn btn-sm btn-primary">Jawaban</a>
+                                                <button type="button" class="btn btn-outline-warning" data-bs-toggle="modal" data-bs-target="#exampleModal{{ $item->id }}">
+                                                    Ubah
+                                                </button>
                                                 <a href="{{ url('admin/quiz/detail-jawaban/'.$item->id) }}" class="btn btn-sm btn-danger">Hapus</a>
                                             </td>
                                         </tr>
+                                        <div class="modal fade" id="exampleModal{{ $item->id }}" tabindex="-1" aria-labelledby="exampleModalLabel{{ $item->id }}" aria-hidden="true">
+                                            <form action="{{ url('admin/materi/detail-soal/edit') }}" method="POST">
+                                                <div class="modal-dialog modal-lg">
+                                                    @csrf
+                                                    <input type="hidden" value="{{ $item->id }}" name="soal_id" id="">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h5 class="modal-title" id="exampleModalLabel{{ $item->id }}">Ubah :  {{ $item->soal }}</h5>
+                                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="btn-close"></button>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            <div class="col-md-12">
+                                                                <label for="" class="label-control"> Soal</label>
+                                                                <input type="text" class="form-control" value="{{ $item->soal }}" name="soal">
+                                                            </div>
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                            <button type="submit" class="btn btn-primary">Save changes</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
                                     @endforeach
                                 </tbody>
                             </table>

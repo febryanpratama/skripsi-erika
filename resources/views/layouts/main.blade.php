@@ -34,9 +34,11 @@
       <link href="{{ asset('admin') }}/css/app.css" rel="stylesheet" />
       <!-- end common css -->
 
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.css">
+      {{-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.css"> --}}
       <link rel="stylesheet" href="//cdn.datatables.net/2.0.0/css/dataTables.dataTables.min.css">
-      <script src="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.js"></script>
+      {{-- <script src="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.js"></script> --}}
+      <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.8/dist/sweetalert2.min.css" rel="stylesheet">
+      <script src="https://cdn.ckeditor.com/ckeditor5/23.0.0/classic/ckeditor.js"></script>
       
       <style>
          .hide {
@@ -73,15 +75,40 @@
       <script src="{{ asset('admin') }}/assets/js/template.js"></script>
       <!-- end common js -->
       <script src="{{ asset('admin') }}/assets/js/dashboard.js"></script>
-      <script src="{{ asset('') }}admin/app-assets/vendors/js/extensions/sweetalert2.all.js" type="text/javascript"></script>
-      <link href=" https://cdn.jsdelivr.net/npm/sweetalert2@11.10.5/dist/sweetalert2.min.css " rel="stylesheet">
+      {{-- <script src="{{ asset('') }}admin/app-assets/vendors/js/extensions/sweetalert2.all.js" type="text/javascript"></script> --}}
+      {{-- <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.5/dist/sweetalert2.min.css " rel="stylesheet"> --}}
+      {{-- <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.8/dist/sweetalert2.all.min.js"></script> --}}
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
       <script src="//cdn.datatables.net/2.0.0/js/dataTables.min.js"></script>
 
 
-      <script>
+      {{-- <script>
          var simplemde = new SimpleMDE({ element: document.getElementById("ckeditor") });
-      </script>
+      </script> --}}
       
+      <script>
+         ClassicEditor
+            .create(document.querySelector('#ckeditor'),{
+               fontSize: {
+                     options: [
+                        9,
+                        11,
+                        13,
+                        'default',
+                        17,
+                        19,
+                        21
+                     ]
+               },
+            })
+            .then(editor => {
+               console.log(editor);
+            })
+            .catch(error => {
+               console.error(error);
+            });
+      </script>
       <script>
          $(document).ready(function(){
             //  $('.dropify').dropify();
@@ -92,10 +119,20 @@
             //      // dropdownParent: $('#large')
             //  });
              @if (session('success'))
-             swal("Great !", "{{ session('success') }}", "success");
+            //  swal("Great !", "{{ session('success') }}", "success");
+                  Swal.fire({
+                     title: "Sukses!",
+                     text: "{{ session('success') }}",
+                     icon: "success",
+                  })
              @endif ()
-             @if (session('error'))
-             swal("Oh No !", "{{ session('error') }}", "error");
+             @if (session('errors'))
+            //  swal("Gagal !", "{{ session('error') }}", "error");
+                  Swal.fire({
+                     title: "Gagal!",
+                     text: "{{ session('errors') }}",
+                     icon: "error",
+                  })
              @endif ()
          });
      </script>

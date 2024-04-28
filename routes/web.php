@@ -3,6 +3,7 @@
 use App\Http\Controllers\FrontController;
 use App\Http\Controllers\MateriController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -60,17 +61,22 @@ Route::group([
     Route::prefix('materi')->group(function(){
         Route::get('/', [MateriController::class, 'index']);
         Route::post('/', [MateriController::class, 'store']);
-
+        Route::post('/edit', [MateriController::class, 'edit']);
+        
         Route::get('/{materi_id}/konten', [MateriController::class, 'indexKontenMateri']);
         Route::get('/{materi_id}/soal', [MateriController::class, 'indexKontenSoal']);
-
-
+        
+        
         Route::post('/detail-materi', [MateriController::class, 'postKontenMateri']);
+        Route::get('/detail-materi/delete/{detail_materi_id}', [MateriController::class, 'deleteDetailMateri']);
         Route::post('/detail-soal', [MateriController::class, 'postKontenSoal']);
+        Route::post('/detail-soal/edit', [MateriController::class, 'postKontenSoalEdit']);
+        Route::get('/detail-soal/delete/{soal_id}', [MateriController::class, 'deleteDetailSoal']);
 
         Route::get('/detail-soal/{soal_id}', [MateriController::class, 'getDetailSoal']);
 
         Route::post('detail-jawaban', [MateriController::class, 'postJawaban']);
+        Route::post('/detail-jawaban/edit', [MateriController::class, 'postJawabanEdit']);
 
 
         // Route::get('/quiz/{materi_id}', [MateriController::class, 'indexQuiz']);
@@ -82,6 +88,13 @@ Route::group([
         Route::post('/', [MateriController::class, 'storeQuizNonMateri']);
         Route::get('/detail-jawaban/{soal_id}', [MateriController::class, 'getDetailJawabanNonMateri']);
         Route::post('/detail-jawaban', [MateriController::class, 'postDetailJawaban']);
+    });
+
+    Route::prefix('users')->group(function(){
+        Route::get('/', [UserController::class, 'index']);
+        Route::post('/', [UserController::class, 'store']);
+        Route::post('/update', [UserController::class, 'update']);
+        Route::get('/delete/{user_id}', [UserController::class, 'delete']);
     });
 });
 
