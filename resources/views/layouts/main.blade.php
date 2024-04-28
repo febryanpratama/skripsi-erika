@@ -38,8 +38,16 @@
       <link rel="stylesheet" href="//cdn.datatables.net/2.0.0/css/dataTables.dataTables.min.css">
       {{-- <script src="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.js"></script> --}}
       <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.8/dist/sweetalert2.min.css" rel="stylesheet">
-      <script src="https://cdn.ckeditor.com/ckeditor5/23.0.0/classic/ckeditor.js"></script>
-      
+      {{-- <script src="https://cdn.ckeditor.com/ckeditor5/23.0.0/classic/ckeditor.js"></script> --}}
+      {{-- <script src="https://cdn.ckeditor.com/ckeditor5/41.3.1/classic/ckeditor.js"></script> --}}
+
+      <script src="https://cdn.tiny.cloud/1/jrkliwklg0jpv81k3cyuvl88ab6qgnxiqeibwrdqhtnu4lb6/tinymce/7/tinymce.min.js" referrerpolicy="origin"></script>
+
+      <script>
+         tinymce.init({
+           selector: '#ckeditor'
+         });
+       </script>
       <style>
          .hide {
             display: none;
@@ -87,7 +95,7 @@
          var simplemde = new SimpleMDE({ element: document.getElementById("ckeditor") });
       </script> --}}
       
-      <script>
+      {{-- <script>
          ClassicEditor
             .create(document.querySelector('#ckeditor'),{
                fontSize: {
@@ -101,6 +109,38 @@
                         21
                      ]
                },
+               alignment: {
+                     options: [ 'left', 'right', 'center', 'justify']
+               },
+               toolbar: {
+                     items: [
+                        'heading',
+                        '|',
+                        'fontSize',
+                        'fontFamily',
+                        '|',
+                        'bold',
+                        'italic',
+                        'underline',
+                        'strikethrough',
+                        'highlight',
+                        '|',
+                        'alignment',
+                        '|',
+                        'numberedList',
+                        'bulletedList',
+                        '|',
+                        'outdent',
+                        'indent',
+                        '|',
+                        'link',
+                        'blockQuote',
+                        'insertTable',
+                        '|',
+                        'undo',
+                        'redo'
+                     ]
+               },
             })
             .then(editor => {
                console.log(editor);
@@ -108,7 +148,7 @@
             .catch(error => {
                console.error(error);
             });
-      </script>
+      </script> --}}
       <script>
          $(document).ready(function(){
             //  $('.dropify').dropify();

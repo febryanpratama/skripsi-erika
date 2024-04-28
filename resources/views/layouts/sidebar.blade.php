@@ -63,7 +63,7 @@
              <span class="link-title">Tentang Aplikasi</span>
              </a>
           </li> --}}
-          <li class="nav-item nav-category">Profile</li>
+          {{-- <li class="nav-item nav-category">Profile</li> --}}
           
           <li class="nav-item nav-category">Docs</li>
           <li class="nav-item">
