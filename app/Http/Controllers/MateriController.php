@@ -108,7 +108,7 @@ class MateriController extends Controller
         // dd($request->all());
         $validator = Validator::make($request->all(), [
             'materi_id' => 'required|numeric|exists:materis,id',
-            'nomor_section' => 'required|numeric',
+            // 'nomor_section' => 'required|numeric',
             'isi_konten' => 'required',
             'voice' => 'required|mimes:mp3|max:10000',
             'gambar.*' => 'required|mimes:jpg,jpeg,png,mp4|max:10000'

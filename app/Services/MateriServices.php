@@ -34,7 +34,7 @@ class MateriServices{
 
         DetailMateri::create([
             'materi_id' => $data['materi_id'],
-            'nomor_section' => $data['nomor_section'],
+            'nomor_section' => $data['nomor_section']??0,
             'isi_konten' => $data['isi_konten'],
             'gambar' => json_encode($listGambar),
             'voice' => $data['name_voice']

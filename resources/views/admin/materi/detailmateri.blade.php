@@ -12,10 +12,10 @@
                         @csrf
                         <input type="hidden" name="materi_id" value="{{ $materi_id }}">
                         <div class="card-body">
-                            <div class="form-group mb-3">
+                            {{-- <div class="form-group mb-3">
                                 <label for="" class="control-label mb-2">Nomor Section</label>
                                 <input type="number" class="form-control" name="nomor_section">
-                            </div>
+                            </div> --}}
                             <div class="form-group mb-3">
                                 <label for="" class="control-label mb-2">File Mp3</label>
                                 <input type="file" class="form-control" name="voice" required>
@@ -55,7 +55,7 @@
                                 <thead class="text-center">
                                     <tr class="text-center">
                                         <th width="5%">Nomor</th>
-                                        <th>Nomor Section</th>
+                                        {{-- <th>Nomor Section</th> --}}
                                         <th wid>Isi Konten</th>
                                         <th>Jumlah Gambar</th>
                                         <th>Action</th>
@@ -67,7 +67,7 @@
                                     {{-- {{ dd($item) }} --}}
                                         <tr class="">
                                             <td>{{ $key+1 }}</td>
-                                            <td>Section {{ $item->nomor_section }}</td>
+                                            {{-- <td>Section {{ $item->nomor_section }}</td> --}}
                                             <td>{!! $item->isi_konten !!}</td>
                                             <td>{{ count(json_decode($item->gambar)) }}</td>
                                             <td>
