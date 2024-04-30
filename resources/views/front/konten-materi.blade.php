@@ -108,16 +108,28 @@
                 let nextIndex = index+1
 
                 for(let i=0;i < gambar.length; i++){
+                    
+                    let extension = gambar[i].image.split('.').pop()
 
-                    // console.log(i+"index")
-                    // console.log(gambar[0].image+"URLINDEX")
+                    if(extension == 'mp4'){
+                        let url = '{{ asset('') }}gambar_materi/'+gambar[i].image
 
-                    let url = '{{ asset('') }}gambar_materi/'+gambar[i].image
+                        $('#carousel').append(`
+                            <video width="320" height="240" autoplay loop>
+                                <source src="`+url+`" type="video/mp4" >
+                                Your browser does not support the video tag.
+                            </video>
+                        `)
+                    }else{
 
-                    console.log(url)
-                    $('#carousel').append(`
-                        <img src="`+url+`" style="width: 40%" alt="">
-                    `)
+                        let url = '{{ asset('') }}gambar_materi/'+gambar[i].image
+    
+    
+                        $('#carousel').append(`
+                            <img src="`+url+`" style="width: 40%" alt="">
+                        `)
+                    }
+
                 }
 
                 if(index >= konten[0].length-1){
