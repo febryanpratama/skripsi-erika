@@ -139,7 +139,7 @@
             $('#mulai').on('click', function(e){
                 $('#truejawaban').html('')
 
-                console.log(respArray)
+                // console.log(respArray)
 
                 $('#mulai').addClass('hide')
                 $('#next').removeClass('hide')
@@ -180,7 +180,7 @@
             })
 
             $('#next').on('click', function(e){
-                console.log(quiz+"nextt")
+                // console.log(quiz+"nextt")
                 $('#truejawaban').html('')
 
                 let jawaban_id
@@ -203,10 +203,10 @@
                 }
 
                 // indexData++
-                console.log(indexData+" Index Now")
+                // console.log(indexData+" Index Now")
 
 
-                console.log(respArray[0][indexData])
+                // console.log(respArray[0][indexData])
 
                 if(respArray[0][indexData] != undefined){
 
@@ -215,31 +215,31 @@
                     $('#jawaban').html(`
                     
                     <div class="col-md-8 col-xs-offset-1">
-                        <div class="radio">
-                            <label class="d-flex">
-                                <input type="radio" name="jawaban_materi" class="radioCheck" onClick="getJawaban(`+respArray[0][indexData].id+`,`+respArray[0][indexData].jawaban[0].id+`)" style="margin-right: 20px" value="`+respArray[0][indexData].jawaban[0].id+`" id="rdo_pick">
-                                <h6>`+respArray[0][indexData].jawaban[0].jawaban+`</h6>
-                            </label>
-                        </div>
-                        <div class="radio">
-                            <label class="d-flex">
-                                <input type="radio" name="jawaban_materi" class="radioCheck" onClick="getJawaban(`+respArray[0][indexData].id+`,`+respArray[0][indexData].jawaban[0].id+`)" style="margin-right: 20px" value="`+respArray[0][indexData].jawaban[1].id+`" id="rdo_pick">
-                                <h6>`+respArray[0][indexData].jawaban[1].jawaban+`</h6>
-                            </label>
-                        </div>
-                        <div class="radio">
-                            <label class="d-flex">
-                                <input type="radio" name="jawaban_materi" class="radioCheck" onClick="getJawaban(`+respArray[0][indexData].id+`,`+respArray[0][indexData].jawaban[0].id+`)" style="margin-right: 20px" value="`+respArray[0][indexData].jawaban[2].id+`" id="rdo_pick">
-                                <h6>`+respArray[0][indexData].jawaban[2].jawaban+`</h6>
-                            </label>
-                        </div>
-                        <div class="radio">
-                            <label class="d-flex">
-                                <input type="radio" name="jawaban_materi" class="radioCheck" onClick="getJawaban(`+respArray[0][indexData].id+`,`+respArray[0][indexData].jawaban[0].id+`)" style="margin-right: 20px" value="`+respArray[0][indexData].jawaban[3].id+`" id="rdo_pick">
-                                <h6>`+respArray[0][indexData].jawaban[3].jawaban+`</h6>
-                            </label>
-                        </div>
+                    <div class="radio">
+                        <label class="d-flex">
+                            <input type="radio" name="jawaban_materi" class="radioCheck" onClick="getJawaban(`+respArray[0][indexData].id+`,`+respArray[0][indexData].jawaban[0].id+`)" style="margin-right: 20px" value="`+respArray[0][indexData].jawaban[0].id+`" id="rdo_pick">
+                            <h6>`+respArray[0][indexData].jawaban[0].jawaban+`</h6>
+                        </label>
                     </div>
+                    <div class="radio">
+                        <label class="d-flex">
+                            <input type="radio" name="jawaban_materi" class="radioCheck" onClick="getJawaban(`+respArray[0][indexData].id+`,`+respArray[0][indexData].jawaban[1].id+`)" style="margin-right: 20px" value="`+respArray[0][indexData].jawaban[1].id+`" id="rdo_pick">
+                            <h6>`+respArray[0][indexData].jawaban[1].jawaban+`</h6>
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <label class="d-flex">
+                            <input type="radio" name="jawaban_materi" class="radioCheck" onClick="getJawaban(`+respArray[0][indexData].id+`,`+respArray[0][indexData].jawaban[2].id+`)" style="margin-right: 20px" value="`+respArray[0][indexData].jawaban[2].id+`" id="rdo_pick">
+                            <h6>`+respArray[0][indexData].jawaban[2].jawaban+`</h6>
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <label class="d-flex">
+                            <input type="radio" name="jawaban_materi" class="radioCheck" onClick="getJawaban(`+respArray[0][indexData].id+`,`+respArray[0][indexData].jawaban[3].id+`)" style="margin-right: 20px" value="`+respArray[0][indexData].jawaban[3].id+`" id="rdo_pick">
+                            <h6>`+respArray[0][indexData].jawaban[3].jawaban+`</h6>
+                        </label>
+                    </div>
+                </div>
                     `)
                 
                 }
@@ -259,11 +259,11 @@
                     jawaban: jawaban_id
                 })
 
-                console.log(quiz)
+                // console.log(quiz)
 
                 indexData++
 
-                console.log(indexData+" Index Now Sekarang" + respArray[0].length)
+                // console.log(indexData+" Index Now Sekarang" + respArray[0].length)
                 
 
                 // if(indexData == respArray[0].length-1){
@@ -327,8 +327,8 @@
         })
 
         function getJawaban(soal_id, jawaban_id){
-            console.log(soal_id)
-            console.log(jawaban_id)
+            // console.log(soal_id)
+            // console.log(jawaban_id)
 
             $.ajax({
                 url: '{{ url("api/get-jawaban") }}',
