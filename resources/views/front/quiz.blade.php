@@ -70,6 +70,7 @@
                                 <a href="javascript:;" class="btn btn-sm btn-outline-info hide" id="next">Selanjutnya</a>
                                 <a href="javascript:;" class="btn btn-sm btn-outline-info hide" id="selesai">Hitung Score Anda</a>
                                 <a href="{{ url('/') }}" class="btn btn-sm btn-outline-info hide" id="beranda">Kembali Ke Beranda</a>
+                                <a href="{{ url('/materi/'.$materi_id.'/konten') }}" class="btn btn-sm btn-outline-info hide" id="materi">Ulangi Ke Materi</a>
                                 {{-- <a href="{{ url('materi/quiz/'.$data->id) }}" class="hide btn btn-sm btn-outline-info" id="btnquiz">Mulai Quiz</a> --}}
                             </div>
                         </div>
@@ -312,8 +313,14 @@
                             </div>
                         `)
 
-                        $('#selesai').addClass('hide')
-                        $('#beranda').removeClass('hide')
+                        if(response.score >= 70){
+                            $('#selesai').addClass('hide')
+                            $('#beranda').removeClass('hide')
+                        }else{
+                            $('#selesai').addClass('hide')
+                            $('#materi').removeClass('hide')
+                        }
+
                     },
                     error: function(xhr, status, error) {
                         // Handle errors here
