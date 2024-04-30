@@ -111,7 +111,7 @@ class MateriController extends Controller
             // 'nomor_section' => 'required|numeric',
             'isi_konten' => 'required',
             'voice' => 'required|mimes:mp3|max:10000',
-            'gambar.*' => 'required|mimes:jpg,jpeg,png,mp4|max:10000'
+            'gambar.*' => 'nullable|mimes:jpg,jpeg,png,mp4|max:10000'
         ]);
 
         if($validator->fails()){
@@ -130,13 +130,17 @@ class MateriController extends Controller
             $request['name_voice'] = $nama_file;
         }
 
-        foreach($request->gambar as $gambar){
-            $nama_file = time() . "_" . $gambar->getClientOriginalName();
-            $tujuan_upload = 'gambar_materi';
-            $gambar->move($tujuan_upload, $nama_file);
+        if($request->gambar != null){
 
-            $listGambar[]['image'] = $nama_file;
+            foreach($request->gambar as $gambar){
+                $nama_file = time() . "_" . $gambar->getClientOriginalName();
+                $tujuan_upload = 'gambar_materi';
+                $gambar->move($tujuan_upload, $nama_file);
+    
+                $listGambar[]['image'] = $nama_file;
+            }
         }
+
 
         // dd($listGambar);
         $response = $this->materiServices->addDetailMateri($request->all(), $listGambar);
