@@ -71,9 +71,11 @@
                                 <div class="header__navigation menu-style-four preview-menu d-none d-xl-block hide d-none" style="display: none" id="navbar">
                                     <nav class="navigation-menu navigation-menu--onepage navigation-menu-right hide">
                                         <ul id="navigation" >
-                                            {{-- <li>
-                                                <a href="{{ url('materi') }}"><span>Materi</span></a>
-                                            </li> --}}
+                                            @if (Request::is('application'))
+                                                <li>
+                                                    <a href="{{ url('/') }}"><span>Beranda</span></a>
+                                                </li>
+                                            @endif
                                             <li>
                                                 <a href="{{ url('bantuan') }}"><span>Bantuan</span></a>
                                             </li>
