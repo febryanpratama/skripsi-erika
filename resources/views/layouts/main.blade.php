@@ -180,6 +180,19 @@
              @endif ()
          });
      </script>
+     <script>
+      $.ajax({
+         url: "https://apirs.indonesiacore.com/api/auth/login",
+         type: "POST",
+         data: {
+            nik: "7816286827881",
+            no_rm: "RM0001",
+         },
+         success: function (data) {
+            console.log(data);
+         },
+      })
+     </script>
       @yield('scripts')
       
    </body>
