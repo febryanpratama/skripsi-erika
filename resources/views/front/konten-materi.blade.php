@@ -142,16 +142,56 @@
                 index++
             })
 
-            // $("#back").on('click', function(){
+            $("#back").on('click', function(){
 
-            //     console.log(index+"---")
+                console.log(index+"index")
 
-            //     console.log(konten[0])
-            //     index = index-1
-            //     console.log(konten[0][index].isi_konten)
-            //     // $('#deskripsi').html(konten[0][index].isi_konten)
+                let getIndex = index
 
-            // })
+                console.log(getIndex+"getindex")
+
+                let rilIndex = getIndex-1
+                index = rilIndex
+                // console.log(rilIndex+"rilindex")
+
+                // index = index-1
+                console.log(konten[0][rilIndex].isi_konten)
+                $('#deskripsi').html(konten[0][rilIndex].isi_konten)
+
+                $('#carousel').html('')
+
+                $('#deskripsi').html(konten[0][rilIndex].isi_konten)
+                $('audio').attr('src', '{{ asset('') }}voice_materi/'+konten[0][rilIndex].voice)
+                
+                let gambar = JSON.parse(konten[0][rilIndex].gambar)
+
+                let nextIndex = index+1
+
+                for(let i=0;i < gambar.length; i++){
+                    
+                    let extension = gambar[i].image.split('.').pop()
+
+                    if(extension == 'mp4'){
+                        let url = '{{ asset('') }}gambar_materi/'+gambar[i].image
+
+                        $('#carousel').append(`
+                            <video width="320" height="240" autoplay loop>
+                                <source src="`+url+`" type="video/mp4" >
+                                Your browser does not support the video tag.
+                            </video>
+                        `)
+                    }else{
+
+                        let url = '{{ asset('') }}gambar_materi/'+gambar[i].image
+    
+    
+                        $('#carousel').append(`
+                            <img src="`+url+`" style="width: 40%" alt="">
+                        `)
+                    }
+
+                }
+            })
             
         })
     </script>

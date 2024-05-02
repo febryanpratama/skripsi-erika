@@ -74,6 +74,18 @@ class MateriController extends Controller
         return back()->withSuccess('Materi berhasil diubah');
     }
 
+    public function delete($materi_id){
+        $check = Materi::where('id', $materi_id)->first();
+
+        if(!$check){
+            return back()->withErrors("Materi Tidak Ditemukan !!!");
+        }
+
+        Materi::where('id', $materi_id)->delete();
+
+        return back()->withSuccess('Materi Berhasil Dihapus');
+    }
+
     public function indexKontenMateri($materi_id){
         $check = Materi::with('detail')->where('id', $materi_id)->first();
 

@@ -62,6 +62,7 @@ Route::group([
         Route::get('/', [MateriController::class, 'index']);
         Route::post('/', [MateriController::class, 'store']);
         Route::post('/edit', [MateriController::class, 'edit']);
+        Route::get('/delete/{materi_id}', [MateriController::class, 'delete']);
         
         Route::get('/{materi_id}/konten', [MateriController::class, 'indexKontenMateri']);
         Route::get('/{materi_id}/soal', [MateriController::class, 'indexKontenSoal']);
