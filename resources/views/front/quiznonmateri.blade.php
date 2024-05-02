@@ -326,40 +326,40 @@
 
         })
 
-        function getJawaban(soal_id, jawaban_id){
-            // console.log(soal_id)
-            // console.log(jawaban_id)
+        // function getJawaban(soal_id, jawaban_id){
+        //     // console.log(soal_id)
+        //     // console.log(jawaban_id)
 
-            $.ajax({
-                url: '{{ url("api/get-jawaban") }}',
-                method: 'POST',
-                data: {
-                    soal_id: soal_id,
-                    jawaban_id: jawaban_id
-                },
-                dataType: 'json', // Change this to the appropriate data type
-                success: function(response) {
-                    // Handle the successful response here
-                    // console.log(response);
-                    if(response.status == true){
-                        $('#truejawaban').html(`
-                            <div class="col-md-8 col-xs-offset-1">
-                                <hr>
-                                <h4 class="text-success"> BENAR </h4>
-                                <p>`+response.data+`</p>
-                            </div>
-                        `)
-                    }else{
-                        $('#truejawaban').html(`
-                            <div class="col-md-8 col-xs-offset-1">
-                                <hr>
-                                <h4 class="text-danger"> SALAH </h4>
-                                <p>`+response.data+`</p>
-                            </div>
-                        `)
-                    }
-                },
-            })
-        }
+        //     $.ajax({
+        //         url: '{{ url("api/get-jawaban") }}',
+        //         method: 'POST',
+        //         data: {
+        //             soal_id: soal_id,
+        //             jawaban_id: jawaban_id
+        //         },
+        //         dataType: 'json', // Change this to the appropriate data type
+        //         success: function(response) {
+        //             // Handle the successful response here
+        //             // console.log(response);
+        //             if(response.status == true){
+        //                 $('#truejawaban').html(`
+        //                     <div class="col-md-8 col-xs-offset-1">
+        //                         <hr>
+        //                         <h4 class="text-success"> BENAR </h4>
+        //                         <p>`+response.data+`</p>
+        //                     </div>
+        //                 `)
+        //             }else{
+        //                 $('#truejawaban').html(`
+        //                     <div class="col-md-8 col-xs-offset-1">
+        //                         <hr>
+        //                         <h4 class="text-danger"> SALAH </h4>
+        //                         <p>`+response.data+`</p>
+        //                     </div>
+        //                 `)
+        //             }
+        //         },
+        //     })
+        // }
     </script>
 @endsection

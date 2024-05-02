@@ -294,29 +294,47 @@
                         // console.log(response);
                         $('#title').html("Berikut Merupakan Score Anda")
                         // console.log("Selesai")
-                        $('#jawaban').html(`
-                            <div class="col-md-8">
-                                <div class="text-center">
-                                    <img src="{{ asset('') }}images/score.jpg" style="width: 50%;height:60%" alt="">
-                                </div>
-                                <div class="text-center">
-                                    <h4 id="deskripsi">
-                                        Score Anda 
-                                    </h4>
-                                    <h1 id="deskripsi">
-                                        `+response.score+` / <span class="text-success">100</span>
-                                    </h1>
-                                    <h4>
-                                        Silahkan klik tombol selesai untuk kembali ke beranda
-                                    </h4>
-                                </div>
-                            </div>
-                        `)
-
+                        
                         if(response.score >= 70){
+                            $('#jawaban').html(`
+                                <div class="col-md-8">
+                                    <div class="text-center">
+                                        <img src="{{ asset('') }}images/score.jpg" style="width: 50%;height:60%" alt="">
+                                    </div>
+                                    <div class="text-center">
+                                        <h4 id="deskripsi">
+                                            Selamat!,anda sudah mencapai nilai target yang di tentukan 
+                                        </h4>
+                                        <h1 id="deskripsi">
+                                            `+response.score+` / <span class="text-success">100</span>
+                                        </h1>
+                                        <h4>
+                                            Silahkan klik tombol selesai untuk kembali ke beranda
+                                        </h4>
+                                    </div>
+                                </div>
+                            `)
                             $('#selesai').addClass('hide')
                             $('#beranda').removeClass('hide')
                         }else{
+                            $('#jawaban').html(`
+                                <div class="col-md-8">
+                                    <div class="text-center">
+                                        <img src="{{ asset('') }}images/score.jpg" style="width: 50%;height:60%" alt="">
+                                    </div>
+                                    <div class="text-center">
+                                        <h4 id="deskripsi">
+                                            Maaf! , anda belum mencapai nilai target yang di tentukan 
+                                        </h4>
+                                        <h1 id="deskripsi">
+                                            `+response.score+` / <span class="text-success">100</span>
+                                        </h1>
+                                        <h4>
+                                            Silahkan klik tombol Ulangi Materi
+                                        </h4>
+                                    </div>
+                                </div>
+                            `)
                             $('#selesai').addClass('hide')
                             $('#materi').removeClass('hide')
                         }
