@@ -74,6 +74,30 @@ class MateriController extends Controller
         return back()->withSuccess('Materi berhasil diubah');
     }
 
+    public function setOrdering(Request $request){
+        // dd($request->all());
+        $validator = Validator::make($request->all(), [
+            'detail_materi_id' => 'required|numeric',
+            'nomor_section' => 'required',
+        ]);
+
+        if($validator->fails()){
+            return redirect()->back()->withErrors($validator->errors()->first());
+        }
+
+        $detailMateri = DetailMateri::where('id', $request->detail_materi_id)->first();
+
+        if(!$detailMateri){
+            return back()->withErrors("Materi Tidak Ditemukan !!!");
+        }
+
+        $detailMateri->update([
+            'nomor_section' => $request->nomor_section
+        ]);
+
+        return back()->withSuccess('Ordering Materi berhasil diubah');
+    }
+
     public function delete($materi_id){
         $check = Materi::where('id', $materi_id)->first();
 

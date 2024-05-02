@@ -66,6 +66,7 @@ Route::group([
         
         Route::get('/{materi_id}/konten', [MateriController::class, 'indexKontenMateri']);
         Route::get('/{materi_id}/soal', [MateriController::class, 'indexKontenSoal']);
+        Route::post('/set-ordering', [MateriController::class, 'setOrdering']);
         
         
         Route::post('/detail-materi', [MateriController::class, 'postKontenMateri']);

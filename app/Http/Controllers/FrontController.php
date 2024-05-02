@@ -39,7 +39,7 @@ class FrontController extends Controller
     }
 
     public function getDetailKontenMateri($id){
-        $data = DetailMateri::where('materi_id', $id)->get();
+        $data = DetailMateri::where('materi_id', $id)->orderBy('nomor_section', 'ASC')->get();
 
         return response()->json([
             'status' => true,
