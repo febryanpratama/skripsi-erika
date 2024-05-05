@@ -23,8 +23,10 @@
                                 <div class="row mt-2 d-flex justify-content-center">
                                     <div class="col-md-8">
                                         
-                                        <p id="deskripsi">
-                                            Selamat datang di materi <b>{{ $data->nama_materi }}</b>. Materi ini akan membahas tentang <b>{{ $data->deskripsi }}</b>. Silahkan klik next untuk melanjutkan ke materi selanjutnya.
+                                        <p id="deskripsi" class="text-center">
+                                            <span class="text-center" style="text-align: center">
+                                                Selamat datang di materi <b>{{ $data->nama_materi }}</b>.<br><br> Materi ini akan membahas tentang <b>{{ $data->deskripsi }}</b> pada Sistem Pencernaan Manusia <br><br> Dalam materi ini akan memberikan pemahaman mendalam tentang bagaimana makanan di ubah menjadi energi dan nutrisi yang dapat di serap oleh tubuh.<br><br>  Silahkan klik next untuk melanjutkan ke materi selanjutnya.
+                                            </span>
                                         </p>
                                         <span class="audioo hide">
                                             <audio controls>
@@ -97,6 +99,7 @@
             $("#next").on('click', function(event){
                 event.preventDefault();
                 $('.audioo').removeClass('hide')
+                $('#deskripsi').removeClass('text-center')
 
                 $('#carousel').html('')
 
