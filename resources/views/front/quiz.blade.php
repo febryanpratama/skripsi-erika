@@ -10,7 +10,7 @@
                         <div class="card">
                             <div class="card-header text-center">
                                 {{-- {{ dd($data) }} --}}
-                                <h3 id="title">Quiz Id</h3>
+                                <h3 id="title">LATIHAN SOAL</h3>
                             </div>
                             <div class="card-body">
                                 <div class="row d-flex justify-content-center" >
