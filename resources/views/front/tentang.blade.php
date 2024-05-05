@@ -132,6 +132,11 @@
                             <p>
                                 Aplikasi CAI adalah singkatan dari Computer-Assisted Instruction (Instruksi Berbantuan Komputer). Ini adalah program komputer atau aplikasi yang dirancang untuk membantu dalam proses pembelajaran dan pengajaran. Aplikasi CAI menggunakan teknologi komputer untuk memberikan materi pembelajaran, interaksi, dan umpan balik kepada pengguna. Tujuannya adalah untuk meningkatkan efektivitas pembelajaran dengan menggabungkan teknologi komputer ke dalam proses pendidikan.
                             </p>
+                            <br>
+                            <br>
+                            <a href="{{ url('application') }}">
+                                <button class="btn btn-info" style="background-color: #fc1e86"> Kembali Ke Aplikasi </button>
+                            </a>
                         </div>
                     </div>
                 </div>

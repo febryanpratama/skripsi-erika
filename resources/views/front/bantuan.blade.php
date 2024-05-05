@@ -139,6 +139,11 @@
                             <!-- Single item gradation End -->
                         </div>
                     </div>
+                    <div class="col-lg-12">
+                        <div class="text-center mt-5 animate wow fadeInBottom" data-wow-delay="0.1s" style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInRight;">
+                            <a href="{{ url('application') }}" class="btn btn-primary" style="background-color: #fc1e86">Kembali Ke Aplikasi</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

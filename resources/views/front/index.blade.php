@@ -9,7 +9,7 @@
                         {{-- <img src="{{ asset('') }}images/cai-logo.png" alt="Karikatur Presisi" width="400" class="mb-4 img-fluid" /> --}}
                         <div class="preview-hero-text wow move-up">
                             <h6 class="mb-30">CAI | COMPUTER AIDED INSTRUCTION</h6>
-                            <h2 class="font-weight--reguler text-white mb-20"><span class="text-warning">CAI</span> - Aplikasi yang memanfaatkan komputer sebagai alat bantu belajar</h2>
+                            <h2 class="font-weight--reguler text-white mb-20"><span class="text-warning">CAI</span> - Aplikasi yang memanfaatkan komputer sebagai alat bantu belajar <span class="text-warning">Sistem Pencernaan Manusia</span></h2>
                             {{-- <i class="text-white" style="font-size: 20px;">Mudah, Cepat dan Transparan</i> --}}
                             <div class="hero-button mt-30">
                                 <a href="{{ url('application') }}" class="btn btn--white" >Mulai Aplikasi</a>
