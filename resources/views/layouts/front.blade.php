@@ -6,6 +6,7 @@
         <title>CAI | COMPUTER AISTED SYSTEM</title>
         <meta name="description" content="" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        
         <!-- Favicon -->
         <link rel="shortcut icon" href="images/logo-small.png" />
 
@@ -34,6 +35,7 @@
                 color: #ffffff;
                 background: #dc3545;
             }
+
             /* .swiper-slide{
             width: 395px !important;
         } */

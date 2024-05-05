@@ -1,12 +1,12 @@
 @extends('layouts.front')
 
 @section('content')
-<div id="main-wrapper">
+<div id="main-wrapper" style="height: 100%;background: url('{{ asset('') }}landing/assets/images/hero/mitech-landing-main-slider-bg.png">
     <div class="site-wrapper-reveal">
-        <div class="preview-hero-area preview-hero-bg position-relative section-space--ptb_120" style="background: url('{{ asset('') }}landing/assets/images/hero/mitech-landing-main-slider-bg.png');">
-            <div class="container-fluid container-fluid--cp-150">
+        <div class="preview-hero-area preview-hero-bg position-relative section-space--ptb_120" style="background: url('{{ asset('') }}landing/assets/images/hero/mitech-landing-main-slider-bg.png');height: 100%">
+            <div class="container-fluid ">
                 <div class="row align-items-center mx-auto">
-                    <div class="col-lg-12 col-md-12" style="z-index: 999">
+                    <div class="col-lg-12 col-md-12" style="z-index: 999;">
                         <div class="card">
                             <div class="card-header text-center">
                                 {{-- {{ dd($data) }} --}}

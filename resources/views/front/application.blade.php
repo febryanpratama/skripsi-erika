@@ -15,7 +15,7 @@
                                     <h3>MATERI</h3>
                                 </div>
                             </div>
-                            <div class="card-footer d-flex justify-content-end">
+                            <div class="card-footer d-flex justify-content-center">
                                 <a href="{{ url('materi') }}">
                                     <button class="btn btn-sm btn-outline-info">Selanjutnya</button>
                                 </a>
@@ -32,7 +32,7 @@
                                     <h3>QUIZ</h3>
                                 </div>
                             </div>
-                            <div class="card-footer d-flex justify-content-end">
+                            <div class="card-footer d-flex justify-content-center">
                                 <a href="{{ url('quiz') }}">
                                     <button class="btn btn-sm btn-outline-info">Selanjutnya</button>
                                 </a>
@@ -49,7 +49,7 @@
                                     <h3>BANTUAN</h3>
                                 </div>
                             </div>
-                            <div class="card-footer d-flex justify-content-end">
+                            <div class="card-footer d-flex justify-content-center">
                                 <a href="{{ url('bantuan') }}">
                                     <button class="btn btn-sm btn-outline-info">Selanjutnya</button>
                                 </a>
@@ -66,7 +66,7 @@
                                     <h3>TENTANG APLIKASI</h3>
                                 </div>
                             </div>
-                            <div class="card-footer d-flex justify-content-end">
+                            <div class="card-footer d-flex justify-content-center">
                                 <a href="{{ url('tentang-aplikasi') }}">
                                     <button class="btn btn-sm btn-outline-info">Selanjutnya</button>
                                 </a>

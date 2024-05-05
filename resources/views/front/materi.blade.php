@@ -15,8 +15,8 @@
                                 <div class="card-body">
                                     <p>{{ $item->deskripsi }}</p>
                                 </div>
-                                <div class="card-footer d-flex justify-content-between">
-                                    <a href="{{ url('materi/quiz/'.$item->id.'/nonmateri') }}" class="btn btn-sm btn-outline-success">Coba Quiz</a>
+                                <div class="card-footer d-flex justify-content-center">
+                                    {{-- <a href="{{ url('materi/quiz/'.$item->id.'/nonmateri') }}" class="btn btn-sm btn-outline-success">Coba Quiz</a> --}}
                                     <a href="{{ url('materi/'.$item->id.'/konten') }}" class="btn btn-sm btn-outline-info">Pelajari Materi</a>
                                 </div>
                             </div>

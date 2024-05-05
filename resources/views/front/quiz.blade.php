@@ -22,9 +22,18 @@
                                 </div>
                                 <div class="row mt-2 d-flex justify-content-center" id="jawaban">
                                     <div class="col-md-8">
-                                        <h6 id="deskripsi">
-                                            Selamat datang di materi <b>Quiz</b>. Materi ini akan membahas tentang <b>Quiz</b>. Silahkan klik next untuk melanjutkan ke materi selanjutnya.<br><br>
-                                            Rules. Anda Tidak dapat mengulangi pertanyaan sebelumnya. Jika anda melakukan hal tersebut, maka seluruh jawaban yang telah anda simpan akan direset dan memulai kembali dari awal. Beware !!!
+                                        <h6 id="deskripsi" class="text-center">
+                                            <span class="text-center">
+                                                Selamat datang di Latihan soal dari materi ini. <br>
+
+                                                Silahkan klik next untuk melanjutkan ke latihan soalnya <br><br>
+                                                <b>
+                                                    Rules.. 
+                                                    Anda tidak dapat mengulangi pertanyaan sebelumnya. Jika anda melakukan hal tersebut, Maka seluruh jawaban yang telah anda simpan akan direset dan memulai kembali dari awal. Beware!!
+                                                </b>
+                                            </span>
+                                            {{-- Selamat datang di materi <b>Quiz</b>. Materi ini akan membahas tentang <b>Quiz</b>. Silahkan klik next untuk melanjutkan ke materi selanjutnya.<br><br>
+                                            Rules. Anda Tidak dapat mengulangi pertanyaan sebelumnya. Jika anda melakukan hal tersebut, maka seluruh jawaban yang telah anda simpan akan direset dan memulai kembali dari awal. Beware !!! --}}
                                         </h6>
                                     </div>
                                 </div>
