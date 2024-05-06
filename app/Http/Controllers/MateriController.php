@@ -147,7 +147,7 @@ class MateriController extends Controller
             // 'nomor_section' => 'required|numeric',
             'isi_konten' => 'required',
             'voice' => 'required|mimes:mp3|max:10000',
-            'gambar.*' => 'nullable|mimes:jpg,jpeg,png,mp4|max:10000'
+            'gambar.*' => 'nullable|mimes:jpg,jpeg,png,mp4,mkv|max:10000'
         ]);
 
         if($validator->fails()){
