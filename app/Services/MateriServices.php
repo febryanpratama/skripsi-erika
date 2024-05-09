@@ -37,7 +37,7 @@ class MateriServices{
             'nomor_section' => $data['nomor_section']??0,
             'isi_konten' => $data['isi_konten'],
             'gambar' => json_encode($listGambar),
-            'voice' => $data['name_voice']
+            'voice' => $data['name_voice'] ?? NULL
         ]);
 
         return [

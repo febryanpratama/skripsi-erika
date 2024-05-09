@@ -18,7 +18,7 @@
                             </div>
                             <div class="form-group mb-3">
                                 <label for="" class="control-label mb-2">File Mp3</label>
-                                <input type="file" class="form-control" name="voice" required>
+                                <input type="file" class="form-control" name="voice">
                             </div>
                             <div class="form-group mb-3">
                                 <label for="" class="control-label mb-2">Isi Konten</label>

@@ -13,13 +13,7 @@
                                 <h3>{{ $data->nama_materi }}</h3>
                             </div>
                             <div class="card-body">
-                                <div class="row d-flex justify-content-center" >
-                                    <div class="col-md-6 owl-carousel d-flex justify-content-center" id="carousel">
-                                        {{-- @foreach ($data->detail as $item)
-                                            <img src="https://dfstudio-d420.kxcdn.com/wordpress/wp-content/uploads/2019/06/digital_camera_photo-980x653.jpg" alt="">
-                                        @endforeach --}}
-                                    </div>
-                                </div>
+                                
                                 <div class="row mt-2 d-flex justify-content-center">
                                     <div class="col-md-8">
                                         
@@ -28,12 +22,22 @@
                                                 Selamat datang di materi <b>{{ $data->nama_materi }}</b>.<br><br> Materi ini akan membahas tentang <b>{{ $data->deskripsi }}</b> pada Sistem Pencernaan Manusia <br><br> Dalam materi ini akan memberikan pemahaman mendalam tentang bagaimana makanan di ubah menjadi energi dan nutrisi yang dapat di serap oleh tubuh.<br><br>  Silahkan klik next untuk melanjutkan ke materi selanjutnya.
                                             </span>
                                         </p>
-                                        <span class="audioo hide">
+                                        {{-- <span class="audioo hide">
                                             <audio controls>
                                                 <source src="" type="audio/mpeg">
                                             </audio>
-                                        </span>
+                                        </span> --}}
                                     </div>
+                                </div>
+                                <div class="row d-flex justify-content-center" >
+                                    <div class="col-md-6 owl-carousel d-flex justify-content-center" id="carousel">
+                                        {{-- Carousel --}}
+                                    </div>
+                                    <span class="audioo hide">
+                                        <audio controls>
+                                            <source src="" type="audio/mpeg">
+                                        </audio>
+                                    </span>
                                 </div>
                             </div>
                             <div class="card-footer d-flex justify-content-between">
@@ -78,7 +82,7 @@
                 dataType: 'json', // Change this to the appropriate data type
                 success: function(response) {
                     // Handle the successful response here
-                    // console.log(response);
+                    console.log(response);
                     let resp = response.data
 
                     konten.push(resp)
@@ -86,6 +90,8 @@
                     // resp.forEach(element => {
                     //     console.log(element.materi_id)
                     // });
+
+                    // console.log(konten)
                 },
                 error: function(xhr, status, error) {
                     // Handle errors here
@@ -97,8 +103,15 @@
 
 
             $("#next").on('click', function(event){
+            // console.log(konten[0][index].isi_konten)
                 event.preventDefault();
-                $('.audioo').removeClass('hide')
+                // $('.audioo').removeClass('hide')
+                if(konten[0][index].voice != null){
+                    $('.audioo').removeClass('hide')
+                    $('audio').attr('src', '{{ asset('') }}voice_materi/'+konten[0][index].voice)
+                }else{
+                    $('.audioo').addClass('hide')
+                }
                 $('#deskripsi').removeClass('text-center')
 
                 $('#carousel').html('')
@@ -118,7 +131,7 @@
                         let url = '{{ asset('') }}gambar_materi/'+gambar[i].image
 
                         $('#carousel').append(`
-                            <video width="320" height="240" autoplay loop>
+                            <video width="500" height="350" autoplay loop>
                                 <source src="`+url+`" type="video/mp4" >
                                 Your browser does not support the video tag.
                             </video>
@@ -164,7 +177,10 @@
                 $('#carousel').html('')
 
                 $('#deskripsi').html(konten[0][rilIndex].isi_konten)
-                $('audio').attr('src', '{{ asset('') }}voice_materi/'+konten[0][rilIndex].voice)
+                if(konten[0][rilIndex].voice != null){
+                    $('.audioo').removeClass('hide')
+                    $('audio').attr('src', '{{ asset('') }}voice_materi/'+konten[0][rilIndex].voice)
+                }
                 
                 let gambar = JSON.parse(konten[0][rilIndex].gambar)
 
@@ -178,7 +194,7 @@
                         let url = '{{ asset('') }}gambar_materi/'+gambar[i].image
 
                         $('#carousel').append(`
-                            <video width="320" height="240" autoplay loop>
+                            <video width="500" height="350" autoplay loop>
                                 <source src="`+url+`" type="video/mp4" >
                                 Your browser does not support the video tag.
                             </video>

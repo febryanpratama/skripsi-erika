@@ -146,7 +146,7 @@ class MateriController extends Controller
             'materi_id' => 'required|numeric|exists:materis,id',
             // 'nomor_section' => 'required|numeric',
             'isi_konten' => 'required',
-            'voice' => 'required|mimes:mp3|max:10000',
+            'voice' => 'nullable|mimes:mp3|max:10000',
             'gambar.*' => 'nullable|mimes:jpg,jpeg,png,mp4,mkv|max:10000'
         ]);
 
