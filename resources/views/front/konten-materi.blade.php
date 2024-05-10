@@ -131,7 +131,7 @@
                         let url = '{{ asset('') }}gambar_materi/'+gambar[i].image
 
                         $('#carousel').append(`
-                            <video width="500" height="350" autoplay loop>
+                            <video width="700" height="550" autoplay loop>
                                 <source src="`+url+`" type="video/mp4" >
                                 Your browser does not support the video tag.
                             </video>
@@ -194,7 +194,7 @@
                         let url = '{{ asset('') }}gambar_materi/'+gambar[i].image
 
                         $('#carousel').append(`
-                            <video width="500" height="350" autoplay loop>
+                            <video width="700" height="550" autoplay loop>
                                 <source src="`+url+`" type="video/mp4" >
                                 Your browser does not support the video tag.
                             </video>
