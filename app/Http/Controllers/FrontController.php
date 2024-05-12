@@ -13,7 +13,7 @@ class FrontController extends Controller
 {
     //
     public function indexMateri(){
-        $data = Materi::get();
+        $data = Materi::orderBy('urutan', 'ASC')->get();
         
         return view('front.materi', [
             'data'  => $data
@@ -140,17 +140,27 @@ class FrontController extends Controller
         $jawaban = JawabanMateri::where('soal_id', $data['soal_id'])->where('id', $data['jawaban_id'])->first();
 
         if($jawaban->is_correct == 1){
+            $data = [
+                "jawaban" => $jawaban->jawaban,
+                "pembahasan" => $jawaban->pembahasan,
+            ];
             $list = [
                 'status' => true,
-                'data' => $jawaban->jawaban
+                'data' => $data
             ];
 
             return response()->json($list);
         }else{
             $getJawabanTrue = JawabanMateri::where('soal_id', $data['soal_id'])->where('is_correct', 1)->first();
+
+            $data = [
+                "jawaban" => $getJawabanTrue->jawaban,
+                "pembahasan" => $getJawabanTrue->pembahasan,
+            ];
+
             $list = [
                 'status' => false,
-                'data' => $getJawabanTrue->jawaban
+                'data' => $data
             ];
 
             return response()->json($list);

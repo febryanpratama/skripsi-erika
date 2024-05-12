@@ -18,7 +18,7 @@
                     </div>
                     <div class="col-lg-6">
                         <div class="preview-inner-img">
-                            <img class="img-fluid min-img animation_images one wow fadeInDown" src="{{ asset('') }}landing/assets/images/hero/mitech-landing-main-slider-slide-01-image-04.png" width="939" height="696" alt="" />
+                            <img class="img-fluid min-img animation_images one wow fadeInDown" src="{{ asset('') }}landing/our-landing.png" width="939" height="696" alt="" />
                         </div>
                     </div>
                 </div>

@@ -330,13 +330,13 @@
           labels: {
             show: false,
             formatter: function (val) {
-              return val + "%";
+              return val + "";
             }
           }
         
         },
         title: {
-          text: 'Monthly Inflation in Argentina, 2002',
+          text: ' Grafik Nilai Rata-Rata Test Soal Siswa',
           floating: true,
           offsetY: 330,
           align: 'center',

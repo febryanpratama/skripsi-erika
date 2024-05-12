@@ -35,6 +35,7 @@ class MateriController extends Controller
         $validator = Validator::make($request->all(), [
             'nama_materi' => 'required',
             'deskripsi' => 'required',
+            'urutan' => 'required|numeric'
         ]);
 
         if($validator->fails()){
@@ -44,6 +45,7 @@ class MateriController extends Controller
         Materi::create([
             'nama_materi' => $request->nama_materi,
             'deskripsi' => $request->deskripsi,
+            'urutan' => $request->urutan
         ]);
 
         return back()->withSuccess('Materi berhasil ditambahkan');
@@ -69,6 +71,7 @@ class MateriController extends Controller
         $materi->update([
             'nama_materi' => $request->nama_materi,
             'deskripsi' => $request->deskripsi,
+            'urutan' => $request->urutan
         ]);
 
         return back()->withSuccess('Materi berhasil diubah');
@@ -289,7 +292,7 @@ class MateriController extends Controller
         ]);
 
         if($validator->fails()){
-            dd($validator->errors()->first());
+            // dd($validator->errors()->first());
             return back()->withErrors($validator->errors()->first());
         }
 
@@ -307,7 +310,7 @@ class MateriController extends Controller
         ]);
 
         if($validator->fails()){
-            dd($validator->errors()->first());
+            // dd($validator->errors()->first());
             return back()->withErrors($validator->errors()->first());
         }
 
@@ -324,7 +327,7 @@ class MateriController extends Controller
         ]);
 
         if($validator->fails()){
-            dd($validator->errors()->first());
+            // dd($validator->errors()->first());
             return back()->withErrors($validator->errors()->first());
         }
 

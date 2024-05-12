@@ -81,7 +81,8 @@ class MateriServices{
         JawabanMateri::create([
             'soal_id' => $data['soal_id'],
             'jawaban' => $data['jawaban'],
-            'is_correct' => $data['is_correct']
+            'is_correct' => $data['is_correct'],
+            'pembahasan' => $data['pembahasan']
         ]);
 
         return [
@@ -99,7 +100,8 @@ class MateriServices{
 
         JawabanMateri::where('id', $data['jawaban_id'])->update([
             'jawaban' => $data['jawaban'],
-            'is_correct' => $data['is_correct']
+            'is_correct' => $data['is_correct'],
+            'pembahasan' => $data['pembahasan']
         ]);
 
         return [

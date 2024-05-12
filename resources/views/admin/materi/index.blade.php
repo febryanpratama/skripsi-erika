@@ -248,6 +248,10 @@
                                     <label for="" class="control-label">Deskripsi Materi</label>
                                     <input type="text" class="form-control" name="deskripsi" value="{{ $item->deskripsi }}" id="deskripsi" placeholder="Deskripsi Materi" />
                                 </div>
+                                <div class="form-group mt-2">
+                                    <label for="" class="control-label">Urutan Materi</label>
+                                    <input type="number" class="form-control" name="urutan" value="{{ $item->urutan }}" id="Urutan" placeholder="Urutan Materi" />
+                                </div>
                               </div>
                               <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -283,6 +287,12 @@
                                     <label for="" class="control-label">Deskripsi Materi</label>
                                     <input type="text" class="form-control" name="deskripsi" id="deskripsi" placeholder="Deskripsi Materi" />
                                 </div>
+                                
+                                <div class="form-group mt-2">
+                                    <label for="" class="control-label">Urutan Materi</label>
+                                    <input type="number" class="form-control" name="urutan" id="urutan" placeholder="Urutan Materi" />
+                                </div>
+
 
                                 <div class="form-group mt-3">
                                     <button class="form-control btn btn-outline-success" type="submit">Tambah Data</button>

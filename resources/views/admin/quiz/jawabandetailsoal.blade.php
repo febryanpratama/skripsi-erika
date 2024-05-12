@@ -30,6 +30,11 @@
                                         <label for="" class="form-contol control-label">Salah</label>
                                     </div>
                                 </div>
+                                <div class="form-group mb-3">
+                                    <label for="" class="control-label mb-2">Pembahasan</label>
+                                    <textarea name="pembahasan" id="ckeditor" class="form-control ckeditor" cols="30" rows="10">{{ $item->pembahasan }}</textarea>
+                                    <small class="text-danger">Kosongkan jika jawaban tersebut valuenya salah</small>
+                                </div>
                             </div>
                             <div class="form-group mb-3">
                                 <button type="submit" class="form-control btn btn-outline-success"> Simpan Data </button>
@@ -71,7 +76,7 @@
                                         </tr>
                                         <div class="modal fade" id="exampleModal{{ $item->id }}" tabindex="-1" aria-labelledby="exampleModalLabel{{ $item->id }}" aria-hidden="true">
                                             <form action="{{ url('admin/materi/detail-jawaban/edit') }}" method="POST">
-                                                <div class="modal-dialog">
+                                                <div class="modal-dialog modal-lg">
                                                     @csrf
                                                     <input type="hidden" name="soal_id" value="{{ $soal_id }}">
                                                     <input type="hidden" value="{{ $item->id }}" name="jawaban_id" id="">
@@ -83,7 +88,9 @@
                                                         <div class="modal-body">
                                                             <div class="col-md-12">
                                                                 <label for="" class="label-control"> Jawaban</label>
-                                                                <input type="text" class="form-control" value="{{ $item->jawaban }}" name="jawaban">
+                                                                {{-- <input type="text" class="form-control" value="{{ $item->jawaban }}" name="jawaban"> --}}
+                                                                <textarea name="jawaban" id="ckeditor" class="form-control ckeditor" cols="30" rows="10">{{ $item->jawaban }}</textarea>
+
                                                             </div>
                                                             <div class="col-md-12 mt-2">
                                                                 <div class="form-group mb-3">
@@ -98,6 +105,13 @@
                                                                             <label for="" class="form-contol control-label">Salah</label>
                                                                         </div>
                                                                     </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-12">
+                                                                <div class="form-group mb-3">
+                                                                    <label for="" class="control-label mb-2">Pembahasan</label>
+                                                                    <textarea name="pembahasan" id="ckeditor" class="form-control ckeditor" cols="30" rows="10">{{ $item->pembahasan }}</textarea>
+                                                                    <small class="text-danger">Kosongkan jika jawaban tersebut valuenya salah</small>
                                                                 </div>
                                                             </div>
                                                         </div>

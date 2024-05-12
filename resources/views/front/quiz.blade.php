@@ -380,7 +380,12 @@
                             <div class="col-md-8 col-xs-offset-1">
                                 <hr>
                                 <h4 class="text-success"> BENAR </h4>
-                                <p>`+response.data+`</p>
+                                <p>`+response.data.jawaban+`</p>
+                            </div>
+                            <div class="col-md-8 col-xs-offset-1">
+                                <hr>
+                                <h4 class="text-info"> Pembahasan </h4>
+                                <p>`+response.data.pembahasan+`</p>
                             </div>
                         `)
                     }else{
@@ -388,7 +393,12 @@
                             <div class="col-md-8 col-xs-offset-1">
                                 <hr>
                                 <h4 class="text-danger"> SALAH </h4>
-                                <p>`+response.data+`</p>
+                                <p>`+response.data.jawaban+`</p>
+                            </div>
+                            <div class="col-md-8 col-xs-offset-1">
+                                <hr>
+                                <h4 class="text-info"> Pembahasan </h4>
+                                <p>`+response.data.pembahasan+`</p>
                             </div>
                         `)
                     }
