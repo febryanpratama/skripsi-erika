@@ -58,7 +58,7 @@
                                     @foreach ($data as $key=>$item)
                                         <tr class="">
                                             <td>{{ $key+1 }}</td>
-                                            <td>{{ $item->soal }}</td>
+                                            <td>{!! $item->soal !!}</td>
                                             <td>
                                                 <a href="{{ url('admin/quiz/detail-jawaban/'.$item->id) }}" class="btn btn-sm btn-primary">Jawaban</a>
                                                 <button type="button" class="btn btn-outline-warning" data-bs-toggle="modal" data-bs-target="#exampleModal{{ $item->id }}">
