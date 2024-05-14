@@ -58,7 +58,7 @@
                                     @foreach ($data as $key=>$item)
                                         <tr class="">
                                             <td>{{ $key+1 }}</td>
-                                            <td>{{ $item->soal }}</td>
+                                            <td>{!! $item->soal !!}</td>
                                             <td>
                                                 <a href="{{ url('admin/quiz/'.$item->materi_id.'/detail-jawaban/'.$item->id) }}" class="btn btn-sm btn-primary">Jawaban</a>
                                                 <a href="{{ url('admin/materi/detail-soal/'.$item->id) }}" class="btn btn-sm btn-danger">Hapus</a>

@@ -65,7 +65,7 @@
                                     @foreach ($data as $key=>$item)
                                         <tr class="">
                                             <td>{{ $key+1 }}</td>
-                                            <td>{{ $item->jawaban }}</td>
+                                            <td>{!! $item->jawaban !!}</td>
                                             <td class={{ $item->is_correct ? 'text-success' : 'text-danger' }}>{{ $item->is_correct ? 'Benar' : 'Salah' }}</td>
                                             <td>
                                                 <button type="button" class="btn btn-outline-warning" data-bs-toggle="modal" data-bs-target="#exampleModal{{ $item->id }}">
