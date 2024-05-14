@@ -110,7 +110,7 @@
                                                             <div class="col-md-12">
                                                                 <div class="form-group mb-3">
                                                                     <label for="" class="control-label mb-2">Pembahasan</label>
-                                                                    <textarea name="pembahasan" id="ckeditor" class="form-control ckeditor" cols="30" rows="10">{{ $item->pembahasan }}</textarea>
+                                                                    <textarea name="pembahasan" id="ckeditor" class="form-control ckeditor" cols="30" rows="10">{{ @$item->pembahasan }}</textarea>
                                                                     <small class="text-danger">Kosongkan jika jawaban tersebut valuenya salah</small>
                                                                 </div>
                                                             </div>
