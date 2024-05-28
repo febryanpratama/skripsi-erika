@@ -40,8 +40,8 @@
                                     </span>
                                 </div>
                             </div>
-                            <div class="card-footer d-flex justify-content-between">
-                                <a href="javascript:;" class="btn btn-sm btn-outline-success" id="back">Back</a>
+                            <div class="card-footer d-flex justify-content-end" id="cardfooter">
+                                <a href="javascript:;" class="btn btn-sm btn-outline-success hide" id="back">Back</a>
                                 <a href="javascript:;" class="btn btn-sm btn-outline-info" id="next">Next</a>
                                 <a href="{{ url('materi/quiz/'.$data->id) }}" class="hide btn btn-sm btn-outline-info" id="btnquiz">Mulai Quiz</a>
                             </div>
@@ -104,6 +104,10 @@
 
             $("#next").on('click', function(event){
             // console.log(konten[0][index].isi_konten)
+                
+                $('#back').removeClass('hide')
+                $('#cardfooter').removeClass('justify-content-end')
+                $('#cardfooter').addClass('justify-content-between')
                 event.preventDefault();
                 // $('.audioo').removeClass('hide')
                 if(konten[0][index].voice != null){
