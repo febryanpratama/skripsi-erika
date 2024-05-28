@@ -18,7 +18,7 @@
                     </div>
                     <div class="col-lg-6">
                         <div class="preview-inner-img">
-                            <img class="img-fluid min-img animation_images one wow fadeInDown" src="{{ asset('') }}landing/our-landing.png" width="939" height="696" alt="" />
+                            <img class="img-fluid min-img animation_images one wow fadeInDown" src="{{ asset('') }}landing/sistem-pencernaan.jpeg" style="border-radius: 30px;z-index: 999" width="939" height="696" alt="" />
                         </div>
                     </div>
                 </div>

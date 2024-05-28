@@ -64,8 +64,8 @@
 
                                 
                             </div>
-                            <div class="card-footer d-flex justify-content-between">
-                                <a href="javascript:;" class="btn btn-sm btn-outline-success" id="back">Back</a>
+                            <div class="card-footer d-flex justify-content-end">
+                                <a href="javascript:;" class="btn btn-sm btn-outline-success hide" id="back">Back</a>
                                 <a href="javascript:;" class="btn btn-sm btn-outline-info " id="mulai">Mulai</a>
                                 <a href="javascript:;" class="btn btn-sm btn-outline-info hide" id="next">Selanjutnya</a>
                                 <a href="javascript:;" class="btn btn-sm btn-outline-info hide" id="selesai">Hitung Score Anda</a>
