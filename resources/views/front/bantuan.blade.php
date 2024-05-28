@@ -144,11 +144,11 @@
                             <a href="{{ url('application') }}" class="btn btn-primary" style="background-color: #fc1e86">Kembali Ke Aplikasi</a>
                         </div>
                     </div>
-                    <div class="col-lg-8 text-center mt-4">
+                    {{-- <div class="col-lg-8 text-center mt-4">
                         <h4 style="text-transform: capitalize;">aplikasi cai sistem pencernaan pada manusia dibuat sebagai syarat untuk menyelesaikan tugas akhir di untan jurusan informatika.</h4>
                         <br>
                         <h4 style="text-transform: capitalize;color: #fc1e86">Erika oktaviani ( D1042171041)</h4>
-                    </div>
+                    </div> --}}
                 </div>
             </div>
         </div>
