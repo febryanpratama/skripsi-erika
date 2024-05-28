@@ -42,7 +42,7 @@
                             </div>
                             <div class="card-footer d-flex justify-content-end" id="cardfooter">
                                 <a href="javascript:;" class="btn btn-sm btn-outline-success hide" id="back">Back</a>
-                                <a href="javascript:;" class="btn btn-sm btn-outline-info" id="next">Next</a>
+                                <a href="javascript:;" class="btn btn-sm btn-outline-info hide" id="next">Next</a>
                                 <a href="{{ url('materi/quiz/'.$data->id) }}" class="hide btn btn-sm btn-outline-info" id="btnquiz">Mulai Quiz</a>
                             </div>
                         </div>
@@ -74,6 +74,11 @@
 @section('script')
     <script>
         $(document).ready(function(){
+
+            setTimeout(() => {
+                $('#next').removeClass('hide')
+            }, 5000);
+
             let konten=[];
 
             $.ajax({
@@ -103,16 +108,17 @@
 
 
             $("#next").on('click', function(event){
-            // console.log(konten[0][index].isi_konten)
+            // console.log(konten[0][index])
                 
-                $('#back').removeClass('hide')
-                $('#cardfooter').removeClass('justify-content-end')
-                $('#cardfooter').addClass('justify-content-between')
-                event.preventDefault();
+            event.preventDefault();
+            $('#back').removeClass('hide')
+            $('#cardfooter').removeClass('justify-content-end')
+            $('#cardfooter').addClass('justify-content-between')
                 // $('.audioo').removeClass('hide')
                 if(konten[0][index].voice != null){
+                    console.log(konten[0][index].voice)
                     $('.audioo').removeClass('hide')
-                    $('audio').attr('src', '{{ asset('') }}voice_materi/'+konten[0][index].voice)
+                    $('audio').attr('src', '{{ asset('') }}voice_materi/'+konten[0][index])
                 }else{
                     $('.audioo').addClass('hide')
                 }
