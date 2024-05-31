@@ -19,7 +19,7 @@
                                         
                                         <p id="deskripsi" class="text-center">
                                             <span class="text-center" style="text-align: center">
-                                                Selamat datang di materi <b>{{ $data->nama_materi }}</b>.<br><br> Materi ini akan membahas tentang <b>{{ $data->deskripsi }}</b> pada Sistem Pencernaan Manusia <br><br> Dalam materi ini akan memberikan pemahaman mendalam tentang bagaimana makanan di ubah menjadi energi dan nutrisi yang dapat di serap oleh tubuh.<br><br>  Silahkan klik next untuk melanjutkan ke materi selanjutnya.
+                                                Selamat datang di materi <b>{{ $data->nama_materi }}</b>.<br><br> Materi ini akan membahas tentang <b>{{ $data->deskripsi }}</b> <br><br>  Silahkan klik next untuk melanjutkan ke materi selanjutnya.
                                             </span>
                                         </p>
                                         {{-- <span class="audioo hide">

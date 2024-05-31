@@ -38,7 +38,7 @@
                                 </div>
 
                                 <div class="content-wrap">
-                                    <img src="{{ asset('landing/ss1.png') }}" class="img-thumbnail text-center" style="width:50%;heiht:80px" alt="">
+                                    <img src="{{ asset('landing/ss1.png') }}" class="img-thumbnail text-center" style="width:100%;heiht:80px" alt="">
                                     <h6 class="heading mt-2">01. Mulai Aplikasi</h6>
 
                                     <div class="text">Pengguna memulai aplikasi.</div>
@@ -60,7 +60,7 @@
                                 </div>
 
                                 <div class="content-wrap">
-                                    <img src="{{ asset('landing/ss2.png') }}" class="img-thumbnail text-center" style="width:50%;heiht:80px" alt="">
+                                    <img src="{{ asset('landing/ss2.png') }}" class="img-thumbnail text-center" style="width:100%;heiht:80px" alt="">
 
                                     <h6 class="heading mt-2">02. Pilih Materi</h6>
 
@@ -83,7 +83,7 @@
                                 </div>
 
                                 <div class="content-wrap">
-                                    <img src="{{ asset('landing/ss3.png') }}" class="img-thumbnail text-center" style="width:50%;heiht:80px" alt="">
+                                    <img src="{{ asset('landing/ss3.png') }}" class="img-thumbnail text-center" style="width:100%;heiht:80px" alt="">
 
                                     <h6 class="heading mt-2">03. Mulai Pembelajaran</h6>
 
@@ -106,7 +106,7 @@
                                 </div>
 
                                 <div class="content-wrap">
-                                    <img src="{{ asset('landing/ss4.png') }}" class="img-thumbnail text-center" style="width:50%;heiht:80px" alt="">
+                                    <img src="{{ asset('landing/ss4.png') }}" class="img-thumbnail text-center" style="width:100%;heiht:80px" alt="">
 
                                     <h6 class="heading mt-2">04. Selesaikan Materi Quiz</h6>
 
@@ -129,7 +129,7 @@
                                 </div>
 
                                 <div class="content-wrap">
-                                    <img src="{{ asset('landing/ss5.png') }}" class="img-thumbnail text-center" style="width:50%;heiht:80px" alt="">
+                                    <img src="{{ asset('landing/ss5.png') }}" class="img-thumbnail text-center" style="width:100%;heiht:80px" alt="">
 
                                     <h6 class="heading mt-2">05. Hasil Pembelajaran Kamu</h6>
 
