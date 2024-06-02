@@ -64,7 +64,10 @@
                                                         <div class="modal-body">
                                                             <div class="col-md-12">
                                                                 <label for="" class="label-control"> Soal</label>
-                                                                <input type="text" class="form-control" value="{{ $item->soal }}" name="soal">
+                                                                <textarea name="soal" id="ckeditor" class="form-control ckeditor" cols="30" rows="10">{!! $item->soal !!}</textarea>
+
+                                                                {{-- <textarea name="soal" class="form-control ckeditor" id="ckeditor" cols="30" rows="10">{!! $item->soal !!}</textarea> --}}
+                                                                {{-- <input type="text" class="form-control" value="{{ $item->soal }}" name="soal"> --}}
                                                             </div>
                                                         </div>
                                                         <div class="modal-footer">

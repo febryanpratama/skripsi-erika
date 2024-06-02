@@ -46,6 +46,34 @@ class MateriServices{
         ];
     }
 
+    static function editDetailMateri($data, $listGambar){
+
+        $check = DetailMateri::where('id', $data['detail_materi_id'])->first();
+
+        $check->update([
+            'nomor_section' => $data['nomor_section']??0,
+            'isi_konten' => $data['isi_konten'],
+            'gambar' => json_encode($listGambar),
+        ]);
+
+        if(isset($data['name_voice'])){
+            
+            $check->update([
+                'voice' => $data['name_voice']
+            ]);
+        }
+
+        if($listGambar == NULL){
+            $listGambar = json_decode($check->gambar);
+        }
+
+        
+        return [
+            "status" => true,
+            "message" => "Berhasil Mengedit Detail Materi"
+        ];
+    }
+
     static function addDetailSoal($data, $type){
         SoalMateri::create([
             'materi_id' => $type == 'nonmateri' ? 0 : $data['materi_id'],

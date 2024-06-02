@@ -72,6 +72,7 @@
                                                 </button>
                                                 {{-- <a href="{{ url('admin/materi/detail-soal/'.$item->id) }}" class="btn btn-sm btn-primary">Jawaban</a>
                                                 <a href="{{ url('admin/materi/detail-soal/'.$item->id) }}" class="btn btn-sm btn-danger">Hapus</a> --}}
+                                                <a href="{{ url('admin/materi/detail-jawaban/hapus/'.$item->id) }}" class="btn btn-sm btn-outline-danger">Hapus</a>
                                             </td>
                                         </tr>
                                         <div class="modal fade" id="exampleModal{{ $item->id }}" tabindex="-1" aria-labelledby="exampleModalLabel{{ $item->id }}" aria-hidden="true">

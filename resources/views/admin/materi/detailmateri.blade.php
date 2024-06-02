@@ -77,6 +77,10 @@
                                                 <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#exampleModal{{ $item->id }}">
                                                     Lihat File
                                                 </button>
+                                                <button type="button" class="btn btn-outline-warning" data-bs-toggle="modal" data-bs-target="#editModal{{ $item->id }}">
+                                                    Ubah
+                                                </button>
+                                                {{-- <a href="{{ url('admin/materi/detail-materi/delete/'.$item->id) }}" class="btn btn-sm btn-outline-warning">Edit</a> --}}
                                                 <a href="{{ url('admin/materi/detail-materi/delete/'.$item->id) }}" class="btn btn-sm btn-outline-danger">Hapus</a>
                                             </td>
 
@@ -105,6 +109,59 @@
                                                         </div>
                                                     </div>
                                                 </form>
+                                            </div>
+                                        </div>
+                                        <div class="modal fade" id="editModal{{ $item->id }}" tabindex="-1" aria-labelledby="exampleModalLabel{{ $item->id }}" aria-hidden="true">
+                                            <div class="modal-dialog modal-lg">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title" id="exampleModalLabel{{ $item->id }}">Lihat Gambar {{ $item->nama_materi }}</h5>
+                                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="btn-close"></button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <form action="{{ url('admin/materi/detail-materi/edit') }}" method="POST" enctype="multipart/form-data">
+                                                            @csrf
+                                                            <input type="hidden" name="detail_materi_id" value="{{ $item->id }}">
+                                                            <input type="hidden" name="materi_id" value="{{ $materi_id }}">
+                                                            {{-- <div class="card-body"> --}}
+                                                                <div class="form-group mb-3">
+                                                                    <label for="" class="control-label mb-2">Nomor Section</label>
+                                                                    <input type="number" class="form-control" name="nomor_section" value="{{ $item->nomor_section }}">
+                                                                </div>
+                                                                <div class="form-group mb-3">
+                                                                    <label for="" class="control-label mb-2">File Mp3</label>
+                                                                    <small class="text-danger"><sup> * Kosongkan jika tidak diubah</sup></small>
+                                                                    <input type="file" class="form-control" name="voice">
+                                                                </div>
+                                                                <div class="form-group mb-3">
+                                                                    <label for="" class="control-label mb-2">Isi Konten</label>
+                                                                    <textarea name="isi_konten" id="ckeditor" class="form-control ckeditor" cols="30" rows="10">{{ $item->isi_konten }}</textarea>
+                                                                </div>
+                                                                
+                                                                <div class="form-group mb-3">
+                                                                    <div class="d-flex justify-content-between mb-2">
+                                                                        <label for="" class="control-label">File</label>
+                                                                        <small class="text-danger"><sup> * Kosongkan jika tidak diubah</sup></small>
+                                                                        <button class="btn btn-sm btn-primary" type="button" id="editGambar"> + File</button>
+                                                                    </div>
+                                                                    <div id="listEditImage">
+                                                                        <div class="d-flex mb-2">
+                                                                            <input type="file" class="form-control mr-2" name="gambar[]">
+                                                                            <button class="btn btn-sm btn-danger" onclick="removeTag()">Hapus</button>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-group mb-3">
+                                                                    <button type="submit" class="form-control btn btn-outline-success"> Ubah Data </button>
+                                                                </div>
+                                                            {{-- </div> --}}
+                                                        </form>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        {{-- <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                        <button type="submit" class="btn btn-primary">Save changes</button> --}}
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="modal fade" id="exampleModal{{ $item->id }}" tabindex="-1" aria-labelledby="exampleModalLabel{{ $item->id }}" aria-hidden="true">
@@ -147,6 +204,14 @@
     <script>
         $('#addGambar').on('click',  function(){
             $('#listImage').append(`
+                <div class="d-flex mb-2">
+                    <input type="file" class="form-control mr-2" name="gambar[]">
+                    <button class="btn btn-sm btn-danger">Hapus</button>
+                </div>
+            `)
+        })
+        $('#editGambar').on('click',  function(){
+            $('#listEditImage').append(`
                 <div class="d-flex mb-2">
                     <input type="file" class="form-control mr-2" name="gambar[]">
                     <button class="btn btn-sm btn-danger">Hapus</button>

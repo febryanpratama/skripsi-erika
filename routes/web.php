@@ -70,6 +70,7 @@ Route::group([
         
         
         Route::post('/detail-materi', [MateriController::class, 'postKontenMateri']);
+        Route::post('/detail-materi/edit', [MateriController::class, 'editKontenMateri']);
         Route::get('/detail-materi/delete/{detail_materi_id}', [MateriController::class, 'deleteDetailMateri']);
         Route::post('/detail-soal', [MateriController::class, 'postKontenSoal']);
         Route::post('/detail-soal/edit', [MateriController::class, 'postKontenSoalEdit']);
@@ -79,6 +80,7 @@ Route::group([
 
         Route::post('detail-jawaban', [MateriController::class, 'postJawaban']);
         Route::post('/detail-jawaban/edit', [MateriController::class, 'postJawabanEdit']);
+        Route::get('/detail-jawaban/hapus/{jawaban_id}', [MateriController::class, 'hapusDetailJawaban']);
 
 
         // Route::get('/quiz/{materi_id}', [MateriController::class, 'indexQuiz']);

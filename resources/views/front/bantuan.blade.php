@@ -62,7 +62,7 @@
                                 <div class="content-wrap">
                                     <img src="{{ asset('landing/ss2.png') }}" class="img-thumbnail text-center" style="width:100%;heiht:80px" alt="">
 
-                                    <h6 class="heading mt-2">02. Pilih Materi</h6>
+                                    <h6 class="heading mt-2">02. Pilih Menu</h6>
 
                                     <div class="text">Pengguna memilih menu yang akan dipilih.</div>
                                 </div>
@@ -83,11 +83,11 @@
                                 </div>
 
                                 <div class="content-wrap">
-                                    <img src="{{ asset('landing/ss3.png') }}" class="img-thumbnail text-center" style="width:100%;heiht:80px" alt="">
+                                    <img src="{{ asset('landing/ss3-terbaru.png') }}" class="img-thumbnail text-center" style="width:100%;heiht:80px" alt="">
 
-                                    <h6 class="heading mt-2">03. Mulai Pembelajaran</h6>
+                                    <h6 class="heading mt-2">03. Pilih Materi</h6>
 
-                                    <div class="text">Pengguna memulai pembelajaran sesuai dengan materi yang diinginkan.</div>
+                                    <div class="text">Pengguna memilih salah satu materi pembelajaran yang ingin dipelajari.</div>
                                 </div>
                             </div>
                             <!-- Single item gradation End -->
@@ -106,11 +106,11 @@
                                 </div>
 
                                 <div class="content-wrap">
-                                    <img src="{{ asset('landing/ss4.png') }}" class="img-thumbnail text-center" style="width:100%;heiht:80px" alt="">
+                                    <img src="{{ asset('landing/ss4-terbaru.png') }}" class="img-thumbnail text-center" style="width:100%;heiht:80px" alt="">
 
-                                    <h6 class="heading mt-2">04. Selesaikan Materi Quiz</h6>
+                                    <h6 class="heading mt-2">04. Halaman Awal Materi</h6>
 
-                                    <div class="text">Pengguna dapat memulai quiz setelah menyelesaikan pembelajaran materi</div>
+                                    <div class="text">Pengguna memulai materi yang dipilih</div>
                                 </div>
                             </div>
                             <!-- Single item gradation End -->
@@ -129,11 +129,128 @@
                                 </div>
 
                                 <div class="content-wrap">
-                                    <img src="{{ asset('landing/ss5.png') }}" class="img-thumbnail text-center" style="width:100%;heiht:80px" alt="">
+                                    <img src="{{ asset('landing/ss5-terbaru.png') }}" class="img-thumbnail text-center" style="width:100%;heiht:80px" alt="">
 
-                                    <h6 class="heading mt-2">05. Hasil Pembelajaran Kamu</h6>
+                                    <h6 class="heading mt-2">05. Halaman awal latihan soal</h6>
 
-                                    <div class="text">Pengguna mendapatkan hasil quiz yang telah dikerjakan.</div>
+                                    <div class="text">Pengguna memulai latihan soal.</div>
+                                </div>
+                            </div>
+                            <!-- Single item gradation End -->
+                        </div>
+                    </div>
+                    <div class="col-lg-12">
+                        <div class="ht-gradation style-01">
+                            <!-- Single item gradation Start -->
+                            <div class="item item-1 animate wow fadeInRight" data-wow-delay="0.1s" style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInRight;">
+                                <div class="line"></div>
+                                <div class="circle-wrap">
+                                    <div class="mask">
+                                        <div class="wave-pulse wave-pulse-1"></div>
+                                        <div class="wave-pulse wave-pulse-2"></div>
+                                        <div class="wave-pulse wave-pulse-3"></div>
+                                    </div>
+
+                                    <h6 class="circle">6</h6>
+                                </div>
+
+                                <div class="content-wrap">
+                                    <img src="{{ asset('landing/ss6.png') }}" class="img-thumbnail text-center" style="width:100%;heiht:80px" alt="">
+                                    <h6 class="heading mt-2">06. Halaman Score</h6>
+
+                                    <div class="text">Pengguna mengerjakan latihan soal dan mendapatkan nilai diatas 70, maka dapat melanjutkan materi berikutnya.</div>
+                                </div>
+                            </div>
+                            <!-- Single item gradation End -->
+
+                            <!-- Single item gradation Start -->
+                            <div class="item item-1 animate wow fadeInRight" data-wow-delay="0.15s" style="visibility: visible; animation-delay: 0.15s; animation-name: fadeInRight;">
+                                <div class="line"></div>
+                                <div class="circle-wrap">
+                                    <div class="mask">
+                                        <div class="wave-pulse wave-pulse-1"></div>
+                                        <div class="wave-pulse wave-pulse-2"></div>
+                                        <div class="wave-pulse wave-pulse-3"></div>
+                                    </div>
+
+                                    <h6 class="circle">2</h6>
+                                </div>
+
+                                <div class="content-wrap">
+                                    <img src="{{ asset('landing/ss2.png') }}" class="img-thumbnail text-center" style="width:100%;heiht:80px" alt="">
+
+                                    <h6 class="heading mt-2">07. Halaman score latihan (2)</h6>
+
+                                    <div class="text">Pengguna mengerjakan latihan soal dan mendapatkan nilai dibawah 70, maka Pengguna harus mengulangi materi tersebut.</div>
+                                </div>
+                            </div>
+                            <!-- Single item gradation End -->
+
+                            <!-- Single item gradation Start -->
+                            <div class="item item-1 animate wow fadeInRight" data-wow-delay="0.20s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInRight;">
+                                <div class="line"></div>
+                                <div class="circle-wrap">
+                                    <div class="mask">
+                                        <div class="wave-pulse wave-pulse-1"></div>
+                                        <div class="wave-pulse wave-pulse-2"></div>
+                                        <div class="wave-pulse wave-pulse-3"></div>
+                                    </div>
+
+                                    <h6 class="circle">3</h6>
+                                </div>
+
+                                <div class="content-wrap">
+                                    <img src="{{ asset('landing/ss8.png') }}" class="img-thumbnail text-center" style="width:100%;heiht:80px" alt="">
+
+                                    <h6 class="heading mt-2">08. Halaman awal quiz</h6>
+
+                                    <div class="text">Pengguna memulai soal quiz</div>
+                                </div>
+                            </div>
+                            <!-- Single item gradation End -->
+
+                            <!-- Single item gradation Start -->
+                            <div class="item item-1 animate wow fadeInRight" data-wow-delay="0.25s" style="visibility: visible; animation-delay: 0.25s; animation-name: fadeInRight;">
+                                <div class="line"></div>
+                                <div class="circle-wrap">
+                                    <div class="mask">
+                                        <div class="wave-pulse wave-pulse-1"></div>
+                                        <div class="wave-pulse wave-pulse-2"></div>
+                                        <div class="wave-pulse wave-pulse-3"></div>
+                                    </div>
+
+                                    <h6 class="circle">4</h6>
+                                </div>
+
+                                <div class="content-wrap">
+                                    <img src="{{ asset('landing/ss9.png') }}" class="img-thumbnail text-center" style="width:100%;heiht:80px" alt="">
+
+                                    <h6 class="heading mt-2">09. Halaman bantuan</h6>
+
+                                    <div class="text">Pengguna membuka bantuan untuk mengetahui cara penggunaan aplikasi</div>
+                                </div>
+                            </div>
+                            <!-- Single item gradation End -->
+
+                            <!-- Single item gradation Start -->
+                            <div class="item item-1 animate wow fadeInRight" data-wow-delay="0.25s" style="visibility: visible; animation-delay: 0.25s; animation-name: fadeInRight;">
+                                <div class="line"></div>
+                                <div class="circle-wrap">
+                                    <div class="mask">
+                                        <div class="wave-pulse wave-pulse-1"></div>
+                                        <div class="wave-pulse wave-pulse-2"></div>
+                                        <div class="wave-pulse wave-pulse-3"></div>
+                                    </div>
+
+                                    <h6 class="circle">5</h6>
+                                </div>
+
+                                <div class="content-wrap">
+                                    <img src="{{ asset('landing/ss10.png') }}" class="img-thumbnail text-center" style="width:100%;heiht:80px" alt="">
+
+                                    <h6 class="heading mt-2">10. Halaman tentang aplikasi</h6>
+
+                                    <div class="text">Pengguna dapat membuka tentang aplikasi tentang penjelasan aplikasi tersebut.</div>
                                 </div>
                             </div>
                             <!-- Single item gradation End -->

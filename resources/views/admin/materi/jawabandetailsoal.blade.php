@@ -71,7 +71,7 @@
                                                 <button type="button" class="btn btn-outline-warning" data-bs-toggle="modal" data-bs-target="#exampleModal{{ $item->id }}">
                                                     Ubah
                                                 </button>
-                                                {{-- <a href="{{ url('admin/materi/detail-jawaban/delete/'.$item->id) }}" class="btn btn-sm btn-outline-danger">Hapus</a> --}}
+                                                <a href="{{ url('admin/materi/detail-jawaban/hapus/'.$item->id) }}" class="btn btn-sm btn-outline-danger">Hapus</a>
                                             </td>
                                         </tr>
                                         <div class="modal fade" id="exampleModal{{ $item->id }}" tabindex="-1" aria-labelledby="exampleModalLabel{{ $item->id }}" aria-hidden="true">

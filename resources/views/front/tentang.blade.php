@@ -133,7 +133,7 @@
                                 Aplikasi CAI adalah singkatan dari Computer-Assisted Instruction (Instruksi Berbantuan Komputer). Ini adalah program komputer atau aplikasi yang dirancang untuk membantu dalam proses pembelajaran dan pengajaran. Aplikasi CAI menggunakan teknologi komputer untuk memberikan materi pembelajaran, interaksi, dan umpan balik kepada pengguna. Tujuannya adalah untuk meningkatkan efektivitas pembelajaran dengan menggabungkan teknologi komputer ke dalam proses pendidikan.
                             </p>
                             <p style="text-transform: capitalize;">aplikasi cai sistem pencernaan pada manusia dibuat sebagai syarat untuk menyelesaikan tugas akhir di untan jurusan informatika.</p>
-                        <p style="text-transform: capitalize;color: #fc1e86">Erika oktaviani ( D1042171041)</p>
+                        <p style="text-transform: capitalize;color: #fc1e86">Erika oktaviani ( D1042171042 )</p>
 
                             <br>
                             <br>
