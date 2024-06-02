@@ -156,7 +156,7 @@
 
                                 <div class="content-wrap">
                                     <img src="{{ asset('landing/ss6.png') }}" class="img-thumbnail text-center" style="width:100%;heiht:80px" alt="">
-                                    <h6 class="heading mt-2">06. Halaman Score</h6>
+                                    <h6 class="heading mt-2">06. Halaman score latihan (1) </h6>
 
                                     <div class="text">Pengguna mengerjakan latihan soal dan mendapatkan nilai diatas 70, maka dapat melanjutkan materi berikutnya.</div>
                                 </div>
@@ -177,7 +177,7 @@
                                 </div>
 
                                 <div class="content-wrap">
-                                    <img src="{{ asset('landing/ss2.png') }}" class="img-thumbnail text-center" style="width:100%;heiht:80px" alt="">
+                                    <img src="{{ asset('landing/ss7.png') }}" class="img-thumbnail text-center" style="width:100%;heiht:80px" alt="">
 
                                     <h6 class="heading mt-2">07. Halaman score latihan (2)</h6>
 
