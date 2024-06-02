@@ -15,7 +15,7 @@
                             </div>
 
                             <div class="gradation-sub-heading">
-                                <h3 class="heading"><mark>05</mark> Langkah</h3>
+                                <h3 class="heading"><mark>10</mark> Langkah</h3>
                             </div>
                         </div>
                     </div>
@@ -173,7 +173,7 @@
                                         <div class="wave-pulse wave-pulse-3"></div>
                                     </div>
 
-                                    <h6 class="circle">2</h6>
+                                    <h6 class="circle">7</h6>
                                 </div>
 
                                 <div class="content-wrap">
@@ -196,7 +196,7 @@
                                         <div class="wave-pulse wave-pulse-3"></div>
                                     </div>
 
-                                    <h6 class="circle">3</h6>
+                                    <h6 class="circle">8</h6>
                                 </div>
 
                                 <div class="content-wrap">
@@ -219,7 +219,7 @@
                                         <div class="wave-pulse wave-pulse-3"></div>
                                     </div>
 
-                                    <h6 class="circle">4</h6>
+                                    <h6 class="circle">9</h6>
                                 </div>
 
                                 <div class="content-wrap">
@@ -242,7 +242,7 @@
                                         <div class="wave-pulse wave-pulse-3"></div>
                                     </div>
 
-                                    <h6 class="circle">5</h6>
+                                    <h6 class="circle">10</h6>
                                 </div>
 
                                 <div class="content-wrap">
