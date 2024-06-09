@@ -59,6 +59,9 @@
          .hover-text:hover {
             color: white
          }
+         .buy-now-wrapper {
+            display: none;
+         }
       </style>
    </head>
    <body >
