@@ -128,7 +128,7 @@
                             <h6 class="mb-3 section-sub-title">TENTANG APLIKASI</h6>
                             <h3 class="heading text-white">Apa itu <span class="text-warning">CAI</span></h3>
                         </div>
-                        <div class="contact-info-two mt-40 text-left text-white">
+                        <div class="contact-info-two mt-40 text-left text-white" style="text-align: justify">
                             <p>
                                 Aplikasi CAI adalah singkatan dari Computer-Assisted Instruction (Instruksi Berbantuan Komputer). Ini adalah program komputer atau aplikasi yang dirancang untuk membantu dalam proses pembelajaran dan pengajaran. Aplikasi CAI menggunakan teknologi komputer untuk memberikan materi pembelajaran, interaksi, dan umpan balik kepada pengguna. Tujuannya adalah untuk meningkatkan efektivitas pembelajaran dengan menggabungkan teknologi komputer ke dalam proses pendidikan.
                                 Dalam aplikasi CAI mempelajari tentang Sistem Pencernaan Pada manusia , materi yang diajarkan mencakup:
