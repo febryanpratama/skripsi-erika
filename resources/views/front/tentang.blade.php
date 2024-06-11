@@ -131,9 +131,26 @@
                         <div class="contact-info-two mt-40 text-left text-white">
                             <p>
                                 Aplikasi CAI adalah singkatan dari Computer-Assisted Instruction (Instruksi Berbantuan Komputer). Ini adalah program komputer atau aplikasi yang dirancang untuk membantu dalam proses pembelajaran dan pengajaran. Aplikasi CAI menggunakan teknologi komputer untuk memberikan materi pembelajaran, interaksi, dan umpan balik kepada pengguna. Tujuannya adalah untuk meningkatkan efektivitas pembelajaran dengan menggabungkan teknologi komputer ke dalam proses pendidikan.
+                                Dalam aplikasi CAI mempelajari tentang Sistem Pencernaan Pada manusia , materi yang diajarkan mencakup:
+                                <br>
+                                <br>
+                                    1. Nutrisi: Menyelami pentingnya nutrisi dalam menjaga kesehatan dan kinerja tubuh manusia.
+                                    <br>
+                                    2. Struktur dan Fungsi Sistem Pencernaan: Memahami organ-organ yang terlibat dalam proses pencernaan, seperti mulut, kerongkongan, lambung, usus halus, dan usus besar, serta peran serta fungsi masing-masing organ dalam mencerna makanan.
+                                    <br>
+                                    3. Gangguan Sistem Pencernaan: Mempelajari gangguan umum yang memengaruhi sistem pencernaan manusia, seperti maag, gangguan usus, dan penyakit lainnya, beserta tanda, gejala, dan cara mengelolanya.
                             </p>
-                            <p style="text-transform: capitalize;">aplikasi cai sistem pencernaan pada manusia dibuat sebagai syarat untuk menyelesaikan tugas akhir di untan jurusan informatika.</p>
-                        <p style="text-transform: capitalize;color: #fc1e86">Erika oktaviani ( D1042171042 )</p>
+                            <p style="text-transform: capitalize;">
+                                APLIKASI CAI SISTEM PENCERNAAN PADA MANUSIA 
+                                <br><br>
+                                DIAJUKAN SEBAGAI SALAH SATU SYARAT UNTUK MENYUSUN TUGAS AKHIR UNIVERSITAS TANJUNG PURA JURUSAN TEKNIK INFORMATIKA
+                                2024
+                                <br><br>
+                                OLEH
+                            {{-- ERIKA OKTAVIANI
+                            (D1042171042) --}}
+                            </p>
+                        <p style="text-transform: capitalize;color: #fc1e86">Erika oktaviani <br>( D1042171042 )</p>
 
                             <br>
                             <br>
