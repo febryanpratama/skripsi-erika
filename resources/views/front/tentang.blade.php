@@ -123,7 +123,7 @@
         >
             <div class="container">
                 <div class="row align-items-center">
-                    <div class="col-lg-5 col-md-6">
+                    <div class="col-lg-6 col-md-6">
                         <div class="conact-us-wrap-three">
                             <h6 class="mb-3 section-sub-title">TENTANG APLIKASI</h6>
                             <h3 class="heading text-white">Apa itu <span class="text-warning">CAI</span></h3>
