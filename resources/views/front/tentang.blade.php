@@ -171,7 +171,7 @@
             <div class="row align-items-center">
                 <div class="col-xl-8 col-lg-7">
                     <div class="cta-content md-text-center">
-                        <h3 class="heading text-white">Mengalami kesulitan saat menggunakan aplikasi <span class="text-color-secondary"> CAI</span>?</h3>
+                        {{-- <h3 class="heading text-white">Mengalami kesulitan saat menggunakan aplikasi <span class="text-color-secondary"> CAI</span>?</h3> --}}
                     </div>
                 </div>
                 <div class="col-xl-4 col-lg-5">
