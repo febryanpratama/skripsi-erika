@@ -7,6 +7,7 @@ use App\Models\JawabanMateri;
 use App\Models\Materi;
 use App\Models\QuizScore;
 use App\Models\SoalMateri;
+use App\Models\Video;
 use Illuminate\Http\Request;
 
 class FrontController extends Controller
@@ -17,6 +18,15 @@ class FrontController extends Controller
         
         return view('front.materi', [
             'data'  => $data
+        ]);
+    }
+    
+    public function indexVideo(){
+        $data = Video::get();
+
+        // dd($data);
+        return view('front.video', [
+            'data' => $data
         ]);
     }
 

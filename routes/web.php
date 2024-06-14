@@ -4,6 +4,7 @@ use App\Http\Controllers\FrontController;
 use App\Http\Controllers\MateriController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\VideoController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -35,6 +36,10 @@ Route::prefix('materi')->group(function(){
 
 Route::prefix('quiz')->group(function(){
     Route::get('/', [FrontController::class, 'indexQuizNonMateri']);
+});
+
+Route::prefix('video')->group(function(){
+    Route::get('/',  [FrontController::class, 'indexVideo']);
 });
 
 Route::get('bantuan', function(){
@@ -92,6 +97,13 @@ Route::group([
         Route::post('/', [MateriController::class, 'storeQuizNonMateri']);
         Route::get('/detail-jawaban/{soal_id}', [MateriController::class, 'getDetailJawabanNonMateri']);
         Route::post('/detail-jawaban', [MateriController::class, 'postDetailJawaban']);
+    });
+
+    Route::prefix('video')->group(function(){
+        Route::get('/', [VideoController::class, 'index']);
+        Route::post('/', [VideoController::class, 'store']);
+        Route::post('/update', [VideoController::class, 'update']);
+        Route::get('/delete/{video_id}', [VideoController::class, 'delete']);
     });
 
     Route::prefix('users')->group(function(){

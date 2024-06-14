@@ -51,6 +51,12 @@
              <span class="link-title">Quiz</span>
              </a>
           </li>
+          <li class="nav-item ">
+             <a href="{{ url('admin/video') }}" class="nav-link">
+             <i class="link-icon" data-feather="video"></i>
+             <span class="link-title">Video</span>
+             </a>
+          </li>
           <li class="nav-item">
              <a href="{{ url('admin/users') }}" class="nav-link">
              <i class="link-icon" data-feather="calendar"></i>
