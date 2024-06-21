@@ -110,10 +110,15 @@
             $("#next").on('click', function(event){
             // console.log(konten[0][index])
                 
+            // console.log(index+"index")
             event.preventDefault();
-            $('#back').removeClass('hide')
-            $('#cardfooter').removeClass('justify-content-end')
-            $('#cardfooter').addClass('justify-content-between')
+            if (index == 1) {
+                $('#back').removeClass('hide')
+                
+                $('#cardfooter').removeClass('justify-content-end')
+                $('#cardfooter').addClass('justify-content-between')
+            }
+
                 // $('.audioo').removeClass('hide')
                 if(konten[0][index].voice != null){
                     console.log(konten[0][index].voice)
@@ -169,6 +174,13 @@
             })
 
             $("#back").on('click', function(){
+
+                if (index == 1) {
+                    $('#back').addClass('hide')
+                    
+                    $('#cardfooter').removeClass('justify-content-between')
+                    $('#cardfooter').addClass('justify-content-end')
+                }
 
                 console.log(index+"index")
 
