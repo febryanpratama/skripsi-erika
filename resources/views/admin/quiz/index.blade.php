@@ -74,13 +74,15 @@
                                                     <input type="hidden" value="{{ $item->id }}" name="soal_id" id="">
                                                     <div class="modal-content">
                                                         <div class="modal-header">
-                                                            <h5 class="modal-title" id="exampleModalLabel{{ $item->id }}">Ubah :  {{ $item->soal }}</h5>
+                                                            <h5 class="modal-title" id="exampleModalLabel{{ $item->id }}">Ubah :  {!! $item->soal !!}</h5>
                                                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="btn-close"></button>
                                                         </div>
                                                         <div class="modal-body">
                                                             <div class="col-md-12">
                                                                 <label for="" class="label-control"> Soal</label>
-                                                                <input type="text" class="form-control" value="{{ $item->soal }}" name="soal">
+                                                                <textarea name="soal" id="ckeditor" class="form-control ckeditor" cols="30" rows="10">{!! $item->soal !!}</textarea>
+
+                                                                {{-- <input type="text" class="form-control" value="{!! $item->soal !!}" name="soal"> --}}
                                                             </div>
                                                         </div>
                                                         <div class="modal-footer">
