@@ -30,11 +30,11 @@
                                         <label for="" class="form-contol control-label">Salah</label>
                                     </div>
                                 </div>
-                                <div class="form-group mb-3">
+                                {{-- <div class="form-group mb-3">
                                     <label for="" class="control-label mb-2">Pembahasan</label>
                                     <textarea name="pembahasan" id="ckeditor" class="form-control ckeditor" cols="30" rows="10"></textarea>
                                     <small class="text-danger">Kosongkan jika jawaban tersebut valuenya salah</small>
-                                </div>
+                                </div> --}}
                             </div>
                             <div class="form-group mb-3">
                                 <button type="submit" class="form-control btn btn-outline-success"> Simpan Data </button>
@@ -87,12 +87,10 @@
                                                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="btn-close"></button>
                                                         </div>
                                                         <div class="modal-body">
-                                                            <div class="col-md-12">
+                                                            {{-- <div class="col-md-12">
                                                                 <label for="" class="label-control"> Jawaban</label>
-                                                                {{-- <input type="text" class="form-control" value="{{ $item->jawaban }}" name="jawaban"> --}}
                                                                 <textarea name="jawaban" id="ckeditor" class="form-control ckeditor" cols="30" rows="10">{{ $item->jawaban }}</textarea>
-
-                                                            </div>
+                                                            </div> --}}
                                                             <div class="col-md-12 mt-2">
                                                                 <div class="form-group mb-3">
                                                                     <label for="" class="control-label">Value Jawaban</label>

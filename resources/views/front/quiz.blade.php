@@ -129,9 +129,6 @@
                     // Handle the successful response here
                     // console.log(response);
                     let resp = response.data
-
-
-                    // console.log(resp)
                     // Shuffle Random Logic
                     resp.sort(()=>{
                         const randomTrueOrFalse = Math.random() > 0.5;
