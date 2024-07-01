@@ -18,7 +18,7 @@
                                     <div class="col-md-8">
                                         
                                         <p id="deskripsi" class="text-center">
-                                            <span class="text-center" style="text-align: center;font-size: 1.5rem">
+                                            <span class="text-center" style="text-align: center;font-size: 1.5rem;color:black">
                                                 Selamat datang di materi <b>{{ $data->nama_materi }}</b>.<br><br> Materi ini akan membahas tentang <b>{{ $data->deskripsi }}</b> <br><br>  Silahkan klik next untuk melanjutkan ke materi selanjutnya.
                                             </span>
                                         </p>
