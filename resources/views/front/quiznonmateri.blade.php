@@ -23,8 +23,7 @@
                                 <div class="row mt-2 d-flex justify-content-center" id="jawaban">
                                     <div class="col-md-8">
                                         <h6 id="deskripsi">
-                                            Selamat datang di materi <b>Quiz</b>. Materi ini akan membahas tentang <b>Quiz</b>. Silahkan klik next untuk melanjutkan ke materi selanjutnya.<br><br>
-                                            Rules. Anda Tidak dapat mengulangi pertanyaan sebelumnya. Jika anda melakukan hal tersebut, maka seluruh jawaban yang telah anda simpan akan direset dan memulai kembali dari awal. Beware !!!
+                                            Selamat datang di kuis evaluasi. Silahkan klik "<b>mulai</b>" untuk lanjut mengerjakan soal kuisnya
                                         </h6>
                                     </div>
                                 </div>
