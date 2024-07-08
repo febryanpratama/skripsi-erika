@@ -28,8 +28,7 @@
 
                                                 Silahkan klik next untuk melanjutkan ke latihan soalnya <br><br>
                                                 <b>
-                                                    Rules.. 
-                                                    Anda tidak dapat mengulangi pertanyaan sebelumnya. Jika anda melakukan hal tersebut, Maka seluruh jawaban yang telah anda simpan akan direset dan memulai kembali dari awal. Beware!!
+                                                    Rules "Setiap pertanyaan yang telah dijawab tidak bisa diubah lagi dan harus dikerjakan sampai seluruh soal latihan selesai. Setelah menjawab, Anda akan diberitahukan apakah jawaban benar atau salah dan diberikan pembahasan mengenai soal tersebut."
                                                 </b>
                                             </span>
                                             {{-- Selamat datang di materi <b>Quiz</b>. Materi ini akan membahas tentang <b>Quiz</b>. Silahkan klik next untuk melanjutkan ke materi selanjutnya.<br><br>
