@@ -22,7 +22,7 @@
                                 </div>
                                 <div class="row mt-2 d-flex justify-content-center" id="jawaban">
                                     <div class="col-md-8">
-                                        <h6 id="deskripsi">
+                                        <h6 id="deskripsi" style="text-align: center;font-size: 1.5rem;color:black">
                                             Selamat datang di kuis evaluasi. Silahkan klik "<b>mulai</b>" untuk lanjut mengerjakan soal kuisnya
                                         </h6>
                                     </div>
@@ -65,7 +65,7 @@
                             </div>
                             <div class="card-footer d-flex justify-content-end">
                                 <a href="javascript:;" class="btn btn-sm btn-outline-success hide" id="back">Back</a>
-                                <a href="javascript:;" class="btn btn-sm btn-outline-info " id="mulai">Mulai</a>
+                                <a href="javascript:;" class="btn btn-sm btn-outline-info mt-4" id="mulai">Mulai</a>
                                 <a href="javascript:;" class="btn btn-sm btn-outline-info hide" id="next">Selanjutnya</a>
                                 <a href="javascript:;" class="btn btn-sm btn-outline-info hide" id="selesai">Hitung Score Anda</a>
                                 <a href="{{ url('/') }}" class="btn btn-sm btn-outline-info hide" id="beranda">Kembali Ke Beranda</a>
