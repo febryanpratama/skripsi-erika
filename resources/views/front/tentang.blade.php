@@ -129,35 +129,8 @@
                             <h3 class="heading text-white">Apa itu <span class="text-warning">CAI</span></h3>
                         </div>
                         <div class="contact-info-two mt-40 text-left text-white" style="text-align: justify">
-                            <p>
-                                Aplikasi CAI adalah singkatan dari Computer-Assisted Instruction (Instruksi Berbantuan Komputer). Ini adalah program komputer atau aplikasi yang dirancang untuk membantu dalam proses pembelajaran dan pengajaran. Aplikasi CAI menggunakan teknologi komputer untuk memberikan materi pembelajaran, interaksi, dan umpan balik kepada pengguna. Tujuannya adalah untuk meningkatkan efektivitas pembelajaran dengan menggabungkan teknologi komputer ke dalam proses pendidikan.
-                                <br><br>
-                                Dalam aplikasi CAI mempelajari tentang Sistem Pencernaan Pada manusia , materi yang diajarkan mencakup:
-                                <br>
-                                <br>
-                                    1. Nutrisi: Menyelami pentingnya nutrisi dalam menjaga kesehatan dan kinerja tubuh manusia.
-                                    <br>
-                                    2. Struktur dan Fungsi Sistem Pencernaan: Memahami organ-organ yang terlibat dalam proses pencernaan, seperti mulut, kerongkongan, lambung, usus halus, dan usus besar, serta peran serta fungsi masing-masing organ dalam mencerna makanan.
-                                    <br>
-                                    3. Gangguan Sistem Pencernaan: Mempelajari gangguan umum yang memengaruhi sistem pencernaan manusia, seperti maag, gangguan usus, dan penyakit lainnya, beserta tanda, gejala, dan cara mengelolanya.
-                            </p>
-                            <p style="text-transform: capitalize;">
-                                APLIKASI CAI SISTEM PENCERNAAN PADA MANUSIA 
-                                <br><br>
-                                DIAJUKAN SEBAGAI SALAH SATU SYARAT UNTUK MENYUSUN TUGAS AKHIR UNIVERSITAS TANJUNG PURA JURUSAN TEKNIK INFORMATIKA
-                                2024
-                                <br><br>
-                                OLEH
-                            {{-- ERIKA OKTAVIANI
-                            (D1042171042) --}}
-                            </p>
-                        <p style="text-transform: capitalize;color: #fc1e86">Erika oktaviani <br>( D1042171042 )</p>
-
-                            <br>
-                            <br>
-                            <a href="{{ url('application') }}">
-                                <button class="btn btn-info" style="background-color: #fc1e86"> Kembali Ke Aplikasi </button>
-                            </a>
+                            <img src="{{ asset('landing/indikator_pencapaian_1.png') }}" style="width: 100%" alt="">
+                            <img src="{{ asset('landing/indikator_pencapaian_2.png') }}" style="width: 100%" alt="">
                         </div>
                     </div>
                 </div>
@@ -170,7 +143,34 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-xl-8 col-lg-7">
-                    <div class="cta-content md-text-center">
+                    <div class="cta-content md-text-center" style="color: white">
+                        <p>
+                            Aplikasi CAI adalah singkatan dari Computer-Assisted Instruction (Instruksi Berbantuan Komputer). Ini adalah program komputer atau aplikasi yang dirancang untuk membantu dalam proses pembelajaran dan pengajaran. Aplikasi CAI menggunakan teknologi komputer untuk memberikan materi pembelajaran, interaksi, dan umpan balik kepada pengguna. Tujuannya adalah untuk meningkatkan efektivitas pembelajaran dengan menggabungkan teknologi komputer ke dalam proses pendidikan.
+                            <br><br>
+                            Dalam aplikasi CAI mempelajari tentang Sistem Pencernaan Pada manusia , materi yang diajarkan mencakup:
+                            <br>
+                            <br>
+                                1. Nutrisi: Menyelami pentingnya nutrisi dalam menjaga kesehatan dan kinerja tubuh manusia.
+                                <br>
+                                2. Struktur dan Fungsi Sistem Pencernaan: Memahami organ-organ yang terlibat dalam proses pencernaan, seperti mulut, kerongkongan, lambung, usus halus, dan usus besar, serta peran serta fungsi masing-masing organ dalam mencerna makanan.
+                                <br>
+                                3. Gangguan Sistem Pencernaan: Mempelajari gangguan umum yang memengaruhi sistem pencernaan manusia, seperti maag, gangguan usus, dan penyakit lainnya, beserta tanda, gejala, dan cara mengelolanya.
+                        </p>
+                        <p style="text-transform: capitalize;">
+                            APLIKASI CAI SISTEM PENCERNAAN PADA MANUSIA 
+                            <br><br>
+                            DIAJUKAN SEBAGAI SALAH SATU SYARAT UNTUK MENYUSUN TUGAS AKHIR UNIVERSITAS TANJUNG PURA JURUSAN TEKNIK INFORMATIKA
+                            2024
+                            <br><br>
+                            OLEH
+                        </p>
+                        <p style="text-transform: capitalize;color: #fc1e86">Erika oktaviani <br>( D1042171042 )</p>
+
+                        <br>
+                        <br>
+                        <a href="{{ url('application') }}">
+                            <button class="btn btn-info" style="background-color: #fc1e86"> Kembali Ke Aplikasi </button>
+                        </a>
                         {{-- <h3 class="heading text-white">Mengalami kesulitan saat menggunakan aplikasi <span class="text-color-secondary"> CAI</span>?</h3> --}}
                     </div>
                 </div>

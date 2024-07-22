@@ -327,7 +327,7 @@
                                             `+response.score+` / <span class="text-success">100</span>
                                         </h1>
                                         <h4>
-                                            Silahkan klik tombol Ulangi Materi
+                                            Silahkan klik tombol Kembali Ke Beranda
                                         </h4>
                                     </div>
                                 </div>

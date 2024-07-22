@@ -41,7 +41,7 @@
       {{-- <script src="https://cdn.ckeditor.com/ckeditor5/23.0.0/classic/ckeditor.js"></script> --}}
       {{-- <script src="https://cdn.ckeditor.com/ckeditor5/41.3.1/classic/ckeditor.js"></script> --}}
 
-      <script src="https://cdn.tiny.cloud/1/uuzcvyclz7raxtl9iqm0ita81ct5d53456z0vkyrptcn5bgn/tinymce/7/tinymce.min.js" referrerpolicy="origin"></script>
+      <script src="https://cdn.tiny.cloud/1/p99eefxytytfgaraemm337gn9mtmhovdy35yogf6iwnhpowv/tinymce/7/tinymce.min.js" referrerpolicy="origin"></script>
 
       <script>
          tinymce.init({
